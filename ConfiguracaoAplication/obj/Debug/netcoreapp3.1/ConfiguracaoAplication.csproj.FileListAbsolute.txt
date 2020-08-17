@@ -1,0 +1,9 @@
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\ConfiguracaoAplication\obj\Debug\netcoreapp3.1\ConfiguracaoAplication.csprojAssemblyReference.cache
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\ConfiguracaoAplication\obj\Debug\netcoreapp3.1\ConfiguracaoAplication.AssemblyInfoInputs.cache
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\ConfiguracaoAplication\obj\Debug\netcoreapp3.1\ConfiguracaoAplication.AssemblyInfo.cs
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\ConfiguracaoAplication\obj\Debug\netcoreapp3.1\ConfiguracaoAplication.csproj.CoreCompileInputs.cache
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\ConfiguracaoAplication\bin\Debug\netcoreapp3.1\ConfiguracaoAplication.deps.json
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\ConfiguracaoAplication\bin\Debug\netcoreapp3.1\ConfiguracaoAplication.dll
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\ConfiguracaoAplication\bin\Debug\netcoreapp3.1\ConfiguracaoAplication.pdb
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\ConfiguracaoAplication\obj\Debug\netcoreapp3.1\ConfiguracaoAplication.dll
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\ConfiguracaoAplication\obj\Debug\netcoreapp3.1\ConfiguracaoAplication.pdb

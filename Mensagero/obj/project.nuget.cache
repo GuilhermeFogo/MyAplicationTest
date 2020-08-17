@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "XIUTrZleWC7D4yLAY4n6pKVnr+vJITiYcAYQSTV9Zt7OXZGwEW0I3XoOXT64uMol0T1k2S5ibLrtCdHMZHRKEg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\API\\Mensagero\\Mensagero.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Guilherme\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

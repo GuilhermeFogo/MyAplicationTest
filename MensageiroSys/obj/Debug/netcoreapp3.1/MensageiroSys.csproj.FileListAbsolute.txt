@@ -1,0 +1,13 @@
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\MensageiroSys\obj\Debug\netcoreapp3.1\MensageiroSys.csprojAssemblyReference.cache
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\MensageiroSys\obj\Debug\netcoreapp3.1\MensageiroSys.AssemblyInfoInputs.cache
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\MensageiroSys\obj\Debug\netcoreapp3.1\MensageiroSys.AssemblyInfo.cs
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\MensageiroSys\obj\Debug\netcoreapp3.1\MensageiroSys.csproj.CoreCompileInputs.cache
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\MensageiroSys\bin\Debug\netcoreapp3.1\ConfiguracaoAplication.dll
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\MensageiroSys\bin\Debug\netcoreapp3.1\emailsettings.json
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\MensageiroSys\bin\Debug\netcoreapp3.1\MensageiroSys.deps.json
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\MensageiroSys\bin\Debug\netcoreapp3.1\MensageiroSys.dll
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\MensageiroSys\bin\Debug\netcoreapp3.1\MensageiroSys.pdb
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\MensageiroSys\bin\Debug\netcoreapp3.1\ConfiguracaoAplication.pdb
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\MensageiroSys\obj\Debug\netcoreapp3.1\MensageiroSys.csproj.CopyComplete
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\MensageiroSys\obj\Debug\netcoreapp3.1\MensageiroSys.dll
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\MensageiroSys\obj\Debug\netcoreapp3.1\MensageiroSys.pdb

@@ -1,0 +1,58 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using SystemAPI.Modal;
+using SystemAPI.Service.Interfaces;
+
+// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+namespace SystemAPI.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class UsuarioController : ControllerBase
+    {
+
+        private readonly IUsuarioService usuarioService;
+        public UsuarioController(IUsuarioService usuarioService)
+        {
+            this.usuarioService = usuarioService;
+        }
+        // GET: api/<UsuarioController>
+        [HttpGet]
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
+
+        // GET api/<UsuarioController>/5
+        [HttpGet("{id}")]
+        public string Get(int id)
+        {
+            return "value";
+        }
+
+        // POST api/<UsuarioController>
+        [HttpPost]
+        public void Post([FromBody] Usuario user)
+        {
+            this.usuarioService.Salve(user);
+        }
+
+        // PUT api/<UsuarioController>/5
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] Usuario user)
+        {
+            this.usuarioService.Alterar(user);
+        }
+
+        // DELETE api/<UsuarioController>/5
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+            this.usuarioService.Deletar(id);
+        }
+    }
+}
