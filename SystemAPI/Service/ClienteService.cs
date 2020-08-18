@@ -37,12 +37,8 @@ namespace SystemAPI.Service
         }
         public Cliente PesquisaCliente(int id)
         {
-            var cliente = repositoryCliente.PesquisaCliente(id)`;
-            if (cliente.Id.Equals(id))
-            {
-                return cliente;
-            }
-            return null;
+            var cliente = repositoryCliente.PesquisaCliente(id);
+            return cliente;
         }
     }
 }

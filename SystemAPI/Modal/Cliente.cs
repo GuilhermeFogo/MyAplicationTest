@@ -9,7 +9,6 @@ namespace SystemAPI.Modal
     public class Cliente : Pessoas
     {
 
-        [Key]
         public string Id { get; set; }
         public Cliente(string id,string nome, string telefone, string email, string rua, string estado, string cep, string complemento, string cidade) : 
             base(nome, telefone, email, rua, estado, cep, complemento, cidade)

@@ -18,7 +18,7 @@ namespace SystemAPI.Mensagero
         public Mensageiro(IConfiguracao configJson)
         {
             this.configJson = configJson;
-            var arquivo = this.configJson.LerArquivo("./emailsettings.json");
+            var arquivo = this.configJson.LerArquivo("../MensageiroSys/emailsettings.json");
             this.emails = JsonConvert.DeserializeObject<Emails>(arquivo);
         }
         public void EnviarEmail(string para, string asssunto, string mensagem)

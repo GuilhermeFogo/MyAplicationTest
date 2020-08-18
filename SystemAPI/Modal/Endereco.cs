@@ -21,5 +21,10 @@ namespace SystemAPI.Modal
             this.CEP = cep;
             this.Complemento = complemento;
         }
+
+        public Endereco()
+        {
+
+        }
     }
 }

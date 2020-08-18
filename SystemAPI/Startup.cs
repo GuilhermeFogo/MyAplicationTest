@@ -87,6 +87,7 @@ namespace SystemAPI
 
             //services
             services.AddSingleton<IClienteService, ClienteService>();
+            services.AddSingleton<IMensageiroService, MensageiroService>();
 
 
 

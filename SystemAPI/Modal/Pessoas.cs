@@ -11,7 +11,7 @@ namespace SystemAPI.Modal
         public string Telefone { get; set; }
         public string Email { get; set; }
 
-        public readonly Endereco endereco;
+        public Endereco endereco { get; set; }
 
         public Pessoas(string nome, string telefone, string email, string rua, string estado, string cep, 
             string complemento, string cidade)
@@ -22,6 +22,8 @@ namespace SystemAPI.Modal
             this.Email = email;
         }
 
-        public Pessoas() {}
+        public Pessoas() {
+            this.endereco = new Endereco();
+        }
     }
 }
