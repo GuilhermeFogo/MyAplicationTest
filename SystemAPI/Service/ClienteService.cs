@@ -35,5 +35,14 @@ namespace SystemAPI.Service
         {
             return this.repositoryCliente.PesquisaTodosClientes();
         }
+        public Cliente PesquisaCliente(int id)
+        {
+            var cliente = repositoryCliente.PesquisaCliente(id)`;
+            if (cliente.Id.Equals(id))
+            {
+                return cliente;
+            }
+            return null;
+        }
     }
 }

@@ -43,6 +43,8 @@ namespace SystemAPI
             });
             services.AddControllers();
 
+            services.AddSwaggerGen();
+
             InjectionDependency(services);
         }
 
@@ -53,8 +55,14 @@ namespace SystemAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseSwagger();
 
             app.UseHttpsRedirection();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
 
             app.UseRouting();
             
@@ -73,14 +81,12 @@ namespace SystemAPI
             // basic
             services.AddSingleton<IConfiguracao, Configuracao>();
             services.AddSingleton<IMensageiro, Mensageiro>();
-            services.AddSingleton<IClienteService, ClienteService>();
             
-
-
             //sql
             services.AddTransient<IRepositoryCliente, RepositoryCliente>();
 
             //services
+            services.AddSingleton<IClienteService, ClienteService>();
 
 
 

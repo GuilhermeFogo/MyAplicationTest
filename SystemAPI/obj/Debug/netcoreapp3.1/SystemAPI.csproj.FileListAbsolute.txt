@@ -66,5 +66,10 @@ C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\bin\Debug\netcoreapp3.1\
 C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\obj\Debug\netcoreapp3.1\SystemAPI.csproj.CoreCompileInputs.cache
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\obj\Debug\netcoreapp3.1\SystemAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\obj\Debug\netcoreapp3.1\SystemAPI.MvcApplicationPartsAssemblyInfo.cache

@@ -13,5 +13,6 @@ namespace SystemAPI.Service.Interfaces
         void Alterar(Cliente cliente);
         void Deletar(int id);
         IEnumerable<Cliente> VerTodosClientes();
+        Cliente PesquisaCliente(int id);
     }
 }

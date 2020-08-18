@@ -29,9 +29,9 @@ namespace SystemAPI.Controllers
 
         // GET api/<ClienteController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Cliente Get(int id)
         {
-            return "value";
+            return this.clienteService.PesquisaCliente(id);
         }
 
         // POST api/<ClienteController>
