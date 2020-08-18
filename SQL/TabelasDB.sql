@@ -31,7 +31,7 @@ on Cliente.id_cliente = Endereco.id_endereco;
 
 
 create view Clientes as
-select Cliente.nome, Cliente.Email, Cliente.Telefone, Endereco.Rua, Endereco.CEP, Endereco.cidade,Endereco.estado 
+select  Cliente.id_cliente, Cliente.nome, Cliente.Email, Cliente.Telefone, Endereco.Rua, Endereco.CEP, Endereco.cidade,Endereco.estado 
 from Cliente inner join Endereco 
 on Cliente.id_cliente = Endereco.id_endereco
 ;
