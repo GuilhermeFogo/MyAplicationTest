@@ -7,17 +7,19 @@ namespace SystemAPI.Modal
 {
     public class Usuario
     {
+        public string Id { get; set; }
         public string Nome { get; set; }
         public string Senha { get; set; }
         public string Email { get; set; }
-        public bool Ativado { get; set; }
+        public bool Ativo { get; set; }
 
-        public Usuario(string nome, string senha, string email, bool ativado)
+        public Usuario(string id, string nome, string senha, string email, bool ativo)
         {
+            this.Id = id;
             this.Nome = nome;
             this.Senha = senha;
             this.Email = email;
-            this.Ativado = ativado;
+            this.Ativo = ativo;
         }
 
         public Usuario()

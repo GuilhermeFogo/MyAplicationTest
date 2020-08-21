@@ -31,13 +31,17 @@ export class FormUserComponent implements OnInit {
       this.form = this.fb.group({
         nome: ['', [Validators.required]],
         senha: ['', [Validators.required, Validators.minLength(6)]],
-        id: ['']
+        id: [''],
+        email:['',[Validators.required, Validators.email]],
+        ativado:[true,[Validators.required]]
       })
     } else {
       this.CreateEdit = "Editando";
       this.form = this.fb.group({
-        nome: [this.data.Nome, [Validators.required]],
-        senha: [this.data.Senha, [Validators.required, Validators.minLength(6)]],
+        nome: [this.data.nome, [Validators.required]],
+        senha: [this.data.senha, [Validators.required, Validators.minLength(6)]],
+        email:[this.data.email,[Validators.required, Validators.email]],
+        ativado:[this.data.ativo,[Validators.required]],
         id: [this.data.Id]
       })
     }
@@ -58,14 +62,18 @@ export class FormUserComponent implements OnInit {
       const newUser = new User({
         nome: this.f.nome.value,
         senha: this.f.senha.value,
-        id: "0"
+        id: "0",
+        email: this.f.email.value,
+        ativo: this.f.ativado.value
       })
       return newUser;
     } else {
       const editUser = new User({
         nome: this.f.nome.value,
         senha: this.f.senha.value,
-        id: this.f.id.value
+        id: this.f.id.value,
+        email: this.f.email.value,
+        ativo: this.f.ativado.value
       })
       return editUser;
     }

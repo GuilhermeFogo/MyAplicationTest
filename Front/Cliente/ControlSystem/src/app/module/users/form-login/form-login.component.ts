@@ -40,7 +40,9 @@ export class FormLoginComponent implements OnInit {
     const user = new User({
       nome: this.f.nameUser.value,
       senha: this.f.pass.value,
-      id: "0"
+      id: "0",
+      email: null,
+      ativo:true
     });
     const expires = this.cookie.Expires(0,0,2);
     // this.loginservice.loginUser(user).subscribe(x => {

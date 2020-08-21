@@ -4,6 +4,7 @@ import { FormUserComponent } from './form-user.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 
 
@@ -15,6 +16,7 @@ import { MatInputModule } from '@angular/material/input';
     MatDialogModule,
     MatButtonModule,
     MatInputModule,
+    MatCheckboxModule,
     ReactiveFormsModule
   ], exports:[FormUserComponent],
   entryComponents:[FormUserComponent]

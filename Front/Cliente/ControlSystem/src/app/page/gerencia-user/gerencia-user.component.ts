@@ -14,7 +14,7 @@ import { MatTableDataSource } from '@angular/material/table';
 export class GerenciaUserComponent implements OnInit {
 
   dataSource: MatTableDataSource<User>;
-  displayedColumns: string[] = ['nome', 'senha', "Edit"];
+  displayedColumns: string[] = ['nome', 'senha','email','ativo', "Edit"];
   private dialog: MatDialog;
   private loginService: LoginService
   constructor(dialog: MatDialog, loginService: LoginService) {
@@ -22,14 +22,9 @@ export class GerenciaUserComponent implements OnInit {
     this.loginService = loginService;
   }
 
-  // private dado = [
-  //   new User({ nome: 'Guilherme', senha: '123456789', id: "0" })
-  // ]
 
   ngOnInit(): void {
     this.getUser();
-
-    // this.dataSource = new MatTableDataSource(this.dado);
   }
 
   public OpenDialog() {
@@ -54,18 +49,12 @@ export class GerenciaUserComponent implements OnInit {
         this.getUser();
       }
     });
+    
   }
 
   public deletaUser(user: User) {
     this.deleteUser(user);   
   }
-
-
-
-
-
-
-
 
 
   private getUser() {

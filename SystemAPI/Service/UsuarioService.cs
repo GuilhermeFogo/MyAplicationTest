@@ -25,7 +25,7 @@ namespace SystemAPI.Service
         public void Deletar(int id)
         {
             var usuarios = this.repositoryUsuario.PesquisarUser(id);
-            this.repositoryUsuario.Deletar(usuarios)
+            this.repositoryUsuario.Deletar(usuarios);
         }
 
         public IEnumerable<Usuario> PesquisarTodos()

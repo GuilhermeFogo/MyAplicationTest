@@ -22,17 +22,21 @@ namespace SystemAPI.Repository
         }
         public void Alterar(Usuario usuario)
         {
-            throw new NotImplementedException();
         }
 
         public void Deletar(Usuario usuario)
         {
-            throw new NotImplementedException();
+
         }
 
         public IEnumerable<Usuario> PesquisarTodos()
         {
-            throw new NotImplementedException();
+            IList<Usuario> listaTeste = new List<Usuario>();
+            listaTeste.Add(new Usuario("0","Guilherme","123456789","jfcdsjfs@sdchsaud", true));
+            listaTeste.Add(new Usuario("1","Guilherme","123456789","jfcdsjfs@sdchsaud", true));
+            listaTeste.Add(new Usuario("2","Guilherme","123456789","jfcdsjfs@sdchsaud", false));
+            listaTeste.Add(new Usuario("3","Guilherme","123456789","jfcdsjfs@sdchsaud", false));
+            return listaTeste;
         }
 
         public Usuario PesquisarUser(int id)
@@ -42,7 +46,6 @@ namespace SystemAPI.Repository
 
         public void Salve(Usuario usuario)
         {
-            throw new NotImplementedException();
         }
     }
 }
