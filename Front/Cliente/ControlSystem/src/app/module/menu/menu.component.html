@@ -1,0 +1,5 @@
+<div *ngFor="let item of list_links">
+    <button color="primary" mat-raised-button (click)="OnClick(item.route)" [disabled]="item.display">
+        <mat-icon>{{item.icon}}</mat-icon>
+        {{item.titulo}}
+    </button>
