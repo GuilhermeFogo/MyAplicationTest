@@ -42,7 +42,7 @@ namespace SystemAPI.Controllers
         }
 
         // PUT api/<UsuarioController>/5
-        [HttpPut("{id}")]
+        [HttpPut()]
         public void Put([FromBody] Usuario user)
         {
             this.usuarioService.Alterar(user);

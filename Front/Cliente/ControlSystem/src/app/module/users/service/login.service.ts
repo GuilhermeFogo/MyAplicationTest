@@ -12,7 +12,7 @@ private http: HttpClient
 private url: string;
   constructor(http: HttpClient) {
     this.http = http;
-    this.url =environment.Local.apiLocal + "api/Usuario";
+    this.url =environment.Local.apiLocal + "api/Usuario/";
    }
 
 
