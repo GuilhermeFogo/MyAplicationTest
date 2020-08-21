@@ -1,0 +1,24 @@
+<h2>{{CreateEdit}} Cliente</h2>
+<form [formGroup]="form" autocomplete="off">
+    <mat-form-field class="w-75">
+        <mat-label>Nome usuario</mat-label>
+        <input matInput formControlName="nome" placeholder="Nome do usuario">
+    </mat-form-field>
+
+    <mat-form-field class="w-75">
+        <mat-label>Telefone</mat-label>
+        <input matInput formControlName="telefone" type="tel" placeholder="(11) 999999999">
+    </mat-form-field>
+
+    <mat-form-field class="w-75">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email" placeholder="email@exemple.com">
+  </mat-form-field>
+
+    <mat-form-field class="invisible" hidden>
+        <input matInput type="number" formControlName="id">
+    </mat-form-field>
+
+    <button mat-button (click)="Onsubmit()" [disabled]="form.invalid">Salvar</button>
+    <button mat-button (click)="Close()">Sair</button>
+</form>
