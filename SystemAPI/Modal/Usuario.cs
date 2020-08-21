@@ -7,12 +7,12 @@ namespace SystemAPI.Modal
 {
     public class Usuario
     {
-        public string Nome { get; private set; }
-        public string Senha { get; private set; }
-        public string Email { get; private set; }
-        public bool? Ativado { get; private set; }
+        public string Nome { get; set; }
+        public string Senha { get; set; }
+        public string Email { get; set; }
+        public bool Ativado { get; set; }
 
-        public Usuario(string nome, string senha, string email, bool? ativado )
+        public Usuario(string nome, string senha, string email, bool ativado)
         {
             this.Nome = nome;
             this.Senha = senha;

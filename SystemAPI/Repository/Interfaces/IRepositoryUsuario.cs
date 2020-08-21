@@ -4,14 +4,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using SystemAPI.Modal;
 
-namespace SystemAPI.Service.Interfaces
+namespace SystemAPI.Repository.Interfaces
 {
-    public interface IUsuarioService
+    public interface IRepositoryUsuario
     {
         void Salve(Usuario usuario);
-        void Deletar(int id);
         void Alterar(Usuario usuario);
+        void Deletar(Usuario usuario);
         Usuario PesquisarUser(int id);
+
         IEnumerable<Usuario> PesquisarTodos();
     }
 }

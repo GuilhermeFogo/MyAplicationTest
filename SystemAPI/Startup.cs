@@ -37,8 +37,7 @@ namespace SystemAPI
                 options.AddDefaultPolicy(
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:4200/",
-                                            "https://localhost:4200/");
+                        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
                     });
             });
             services.AddControllers();
@@ -65,14 +64,17 @@ namespace SystemAPI
             });
 
             app.UseRouting();
-            
+
             app.UseCors();
 
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "api/[controller]/");
+
             });
         }
 
@@ -81,13 +83,15 @@ namespace SystemAPI
             // basic
             services.AddSingleton<IConfiguracao, Configuracao>();
             services.AddSingleton<IMensageiro, Mensageiro>();
-            
+
             //sql
             services.AddTransient<IRepositoryCliente, RepositoryCliente>();
+            services.AddTransient<IRepositoryUsuario, RepositoryUsuario>();
 
             //services
             services.AddSingleton<IClienteService, ClienteService>();
             services.AddSingleton<IMensageiroService, MensageiroService>();
+            services.AddSingleton<IUsuarioService, UsuarioService>();
 
 
 

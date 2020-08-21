@@ -22,16 +22,16 @@ namespace SystemAPI.Controllers
         }
         // GET: api/<UsuarioController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Usuario> Get()
         {
-            return new string[] { "value1", "value2" };
+            return this.usuarioService.PesquisarTodos();
         }
 
         // GET api/<UsuarioController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Usuario Get(int id)
         {
-            return "value";
+            return  this.usuarioService.PesquisarUser(id);
         }
 
         // POST api/<UsuarioController>
@@ -43,7 +43,7 @@ namespace SystemAPI.Controllers
 
         // PUT api/<UsuarioController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Usuario user)
+        public void Put([FromBody] Usuario user)
         {
             this.usuarioService.Alterar(user);
         }
