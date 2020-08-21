@@ -29,17 +29,19 @@ namespace SystemAPI
 
         public IConfiguration Configuration { get; }
 
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors(options =>
             {
-                options.AddDefaultPolicy(
-                    builder =>
-                    {
-                        builder.WithOrigins("http://localhost:4200/",
-                                            "https://localhost:4200/");
-                    });
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  builder =>
+                                  {
+                                      builder.AllowAnyOrigin()
+                                        .AllowAnyMethod()
+                                        .AllowAnyHeader();
+                                  });
             });
             services.AddControllers();
 
@@ -65,14 +67,17 @@ namespace SystemAPI
             });
 
             app.UseRouting();
-            
-            app.UseCors();
+
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "api/[controller]/");
+
             });
         }
 
@@ -81,13 +86,16 @@ namespace SystemAPI
             // basic
             services.AddSingleton<IConfiguracao, Configuracao>();
             services.AddSingleton<IMensageiro, Mensageiro>();
-            
+
             //sql
-            services.AddTransient<IRepositoryCliente, RepositoryCliente>();
+
+            //services.AddTransient<IRepositoryCliente, RepositoryCliente>();
+            services.AddTransient<IRepositoryUsuario, RepositoryUsuario>();
 
             //services
-            services.AddSingleton<IClienteService, ClienteService>();
+            //services.AddSingleton<IClienteService, ClienteService>();
             services.AddSingleton<IMensageiroService, MensageiroService>();
+            services.AddSingleton<IUsuarioService, UsuarioService>();
 
 
 
