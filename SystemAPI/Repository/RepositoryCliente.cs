@@ -49,14 +49,15 @@ namespace SystemAPI.Repository
 
         public void Salve(Cliente cliente)
         {
-
-            string sqlcliente = @"INSERT INTO Cliente(nome, email, telefone) values(@nome, @email,@telefone)";
-            string sqlendereco = @"INSERT INTO Endereco(rua, CEP, estado, cidade, complemento) values(@rua, @CEP, @estado, @cidade, @complemento)";
+            string sequenceCliente = "NEXT VALUE FOR SEQ_Cliente";
+            string sequenceEndereco = "NEXT VALUE FOR SEQ_Endereco";
+            string sqlcliente = @$"INSERT INTO Cliente(id_cliente, id_endereco, nome, email, telefone) values({sequenceCliente}, @nome, @email,@telefone)";
+            string sqlendereco = @$"INSERT INTO Endereco(id_endereco, rua, CEP, estado, cidade, complemento) values({sequenceEndereco}, @rua, @CEP, @estado, @cidade, @complemento)";
 
             using (var connection = new SqlConnection(this.conn))
             {
                 connection.Open();
-                connection.Execute(sqlendereco, new
+                var endereco = connection.QuerySingle<Endereco>(sqlendereco, new
                 {
                     cliente.endereco.Rua,
                     cliente.endereco.CEP,
@@ -64,7 +65,7 @@ namespace SystemAPI.Repository
                     cliente.endereco.Cidade,
                     cliente.endereco.Complemento
                 });
-                connection.Execute(sqlcliente, new { cliente.Nome, cliente.Email, cliente.Telefone });
+                connection.Execute(sqlcliente, new { endereco.IdEndereco, cliente.Nome, cliente.Email, cliente.Telefone });
 
                 connection.Close();
             }
@@ -77,7 +78,7 @@ namespace SystemAPI.Repository
             using (var connection = new SqlConnection(this.conn))
             {
                 connection.Open();
-                var cliente = connection.Query<Cliente>(sql, new { id = id });
+                var cliente = connection.Query<Cliente>(sql, new { id_cliente = id });
                 connection.Close();
 
                 return cliente.FirstOrDefault();
