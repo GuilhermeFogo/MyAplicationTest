@@ -13,10 +13,10 @@ namespace SystemAPI.Modal
 
         public Endereco endereco { get; set; }
 
-        public Pessoas(string nome, string telefone, string email, string rua, string estado, string cep, 
+        public Pessoas(string idEndereco ,string nome, string telefone, string email, string rua, string estado, string cep, 
             string complemento, string cidade)
         {
-            this.endereco = new Endereco(rua, cep, estado, cidade, complemento);
+            this.endereco = new Endereco(idEndereco, rua, cep, estado, cidade, complemento);
             this.Nome = nome;
             this.Telefone = telefone;
             this.Email = email;

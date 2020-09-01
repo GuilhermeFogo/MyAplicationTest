@@ -9,13 +9,13 @@ namespace SystemAPI.Modal
     public class Cliente : Pessoas
     {
 
-        public string Id { get; set; }
-        public Cliente(string id,string nome, string telefone, string email, string rua, string estado, string cep, string complemento, string cidade) : 
-            base(nome, telefone, email, rua, estado, cep, complemento, cidade)
+        public string Id_Cliente { get; set; }
+        public Cliente(string id_cliente, string idEndereco, string nome, string telefone, string email, string rua, string estado, string cep, string complemento, string cidade) : 
+            base(idEndereco, nome, telefone, email, rua, estado, cep, complemento, cidade)
         {
-            this.Id = id;
+            this.Id_Cliente = id_cliente;
         }
 
-        public Cliente() {}
+        public Cliente(): base() {}
     }
 }

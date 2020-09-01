@@ -40,7 +40,7 @@ namespace SystemAPI.Repository
             using (var connection = new SqlConnection(this.conn))
             {
                 connection.Open();
-                var clientes = connection.Execute(sqlcliente, cliente.Id);
+                var clientes = connection.Execute(sqlcliente, cliente.Id_Cliente);
                 var enderecos = connection.Execute(sqlendereco, cliente.endereco.IdEndereco);
 
                 connection.Close();
@@ -49,15 +49,14 @@ namespace SystemAPI.Repository
 
         public void Salve(Cliente cliente)
         {
-            string sequenceCliente = "NEXT VALUE FOR SEQ_Cliente";
-            string sequenceEndereco = "NEXT VALUE FOR SEQ_Endereco";
-            string sqlcliente = @$"INSERT INTO Cliente(id_cliente, id_endereco, nome, email, telefone) values({sequenceCliente}, @nome, @email,@telefone)";
-            string sqlendereco = @$"INSERT INTO Endereco(id_endereco, rua, CEP, estado, cidade, complemento) values({sequenceEndereco}, @rua, @CEP, @estado, @cidade, @complemento)";
+            string sqlcliente = @"INSERT INTO Cliente(id_endereco, nome, email, telefone) values(@IdEndereco, @nome, @email,@telefone)";
+            string sqlendereco = @"INSERT INTO Endereco(rua, CEP, estado, cidade, complemento) values(@rua, @CEP, @estado, @cidade, @complemento)";
+            string sqlHelper = @"select current_value from sys.sequences where name ='SEQ_Endereco'";
 
             using (var connection = new SqlConnection(this.conn))
             {
                 connection.Open();
-                var endereco = connection.QuerySingle<Endereco>(sqlendereco, new
+                connection.Execute(sqlendereco, new
                 {
                     cliente.endereco.Rua,
                     cliente.endereco.CEP,
@@ -65,7 +64,9 @@ namespace SystemAPI.Repository
                     cliente.endereco.Cidade,
                     cliente.endereco.Complemento
                 });
-                connection.Execute(sqlcliente, new { endereco.IdEndereco, cliente.Nome, cliente.Email, cliente.Telefone });
+                var id_end = connection.Query<int>(sqlHelper);
+                var id = id_end.FirstOrDefault();
+                connection.Execute(sqlcliente, new { IdEndereco = id, cliente.Nome, cliente.Email, cliente.Telefone });
 
                 connection.Close();
             }

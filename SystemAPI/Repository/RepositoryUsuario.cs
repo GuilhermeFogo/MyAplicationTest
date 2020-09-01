@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Dapper;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using SystemAPI.Configuracoes.Interfaces;
@@ -46,6 +48,19 @@ namespace SystemAPI.Repository
 
         public void Salve(Usuario usuario)
         {
+            string sql = @"Insert Into Usuario(nome, email, senha, ativo) values(@nome,@email,ENCRYPTBYPASSPHRASE(@senha,'1'),@ativo)";
+            using (var connection = new SqlConnection(this.conn))
+            {
+                connection.Open();
+                connection.Execute(sql, new {
+                    usuario.Nome,
+                    usuario.Email,
+                    usuario.Senha,
+                    usuario.Ativo
+                });
+
+                connection.Close();
+            }
         }
     }
 }

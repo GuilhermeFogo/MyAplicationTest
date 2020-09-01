@@ -14,17 +14,18 @@ namespace SystemAPI.Modal
         public string Estado { get; set; }
         public string Cidade { get; set; }
 
-        public Endereco(string rua, string cep, string estado, string cidade, string complemento) 
+        public Endereco( string idendereco, string rua, string cep, string estado, string cidade, string complemento) 
         {
+            this.IdEndereco = idendereco;
             this.Estado = estado;
             this.Rua = rua;
             this.CEP = cep;
+            this.Cidade = cidade;
             this.Complemento = complemento;
         }
 
         public Endereco()
         {
-
         }
     }
 }
