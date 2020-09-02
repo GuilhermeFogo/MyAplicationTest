@@ -33,15 +33,15 @@ namespace SystemAPI.Repository
 
         public void Deletar(Cliente cliente)
         {
-            string sqlcliente = @"delete from Cliente where id_cliente = @id_cliente";
-            string sqlendereco = @"delete from Endereco where id_enderenco = @id_endereco";
+            string sqlcliente = @"delete from Cliente where id_cliente = @id_Cliente";
+            string sqlendereco = @"delete from Endereco where id_endereco = @IdEndereco";
 
 
             using (var connection = new SqlConnection(this.conn))
             {
                 connection.Open();
-                var clientes = connection.Execute(sqlcliente, cliente.Id_Cliente);
-                var enderecos = connection.Execute(sqlendereco, cliente.endereco.IdEndereco);
+                var clientes = connection.Execute(sqlcliente, new { id_Cliente = cliente.Id_Cliente});
+                var enderecos = connection.Execute(sqlendereco, new { idEndereco = cliente.endereco.Id_Endereco });
 
                 connection.Close();
             }
@@ -74,15 +74,21 @@ namespace SystemAPI.Repository
 
         public Cliente PesquisaCliente(int id)
         {
-            string sql = @"select * from Clientes where id_cliente =@id";
+            string sql = @"select * from Clientes where id_cliente =@id_cliente";
 
             using (var connection = new SqlConnection(this.conn))
             {
                 connection.Open();
-                var cliente = connection.Query<Cliente>(sql, new { id_cliente = id });
+
+                var clientes = connection.Query<Cliente, Endereco, Cliente>(sql,(cliente, endereco) =>
+                {
+                    cliente.endereco = endereco;
+                    return cliente;
+                }, new { id_cliente = id},splitOn: "id_endereco, rua"
+                 ).AsQueryable();
                 connection.Close();
 
-                return cliente.FirstOrDefault();
+                return clientes.FirstOrDefault();
             }
 
         }
@@ -90,15 +96,21 @@ namespace SystemAPI.Repository
         public IEnumerable<Cliente> PesquisaTodosClientes()
         {
             string sql = @"select * from Clientes";
-
             using (var connection = new SqlConnection(this.conn))
             {
                 connection.Open();
-                var cliente = connection.Query<Cliente>(sql);
-                connection.Close();
 
-                return cliente;
+                var clientes = connection.Query<Cliente, Endereco, Cliente>( sql, (cliente, endereco) => {
+                    cliente.endereco = endereco;
+                    return cliente;
+                }, splitOn: "id_endereco, rua"
+                 ).AsQueryable() ;
+
+                connection.Close();
+               
+                return clientes;
             }
         }
+
     }
 }

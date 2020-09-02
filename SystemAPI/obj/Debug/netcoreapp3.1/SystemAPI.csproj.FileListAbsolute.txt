@@ -70,6 +70,12 @@ C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\bin\Debug\netcoreapp3.1\
 C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\bin\Debug\netcoreapp3.1\Antlr3.Runtime.dll
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\bin\Debug\netcoreapp3.1\Iesi.Collections.dll
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\bin\Debug\netcoreapp3.1\NHibernate.dll
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\bin\Debug\netcoreapp3.1\Remotion.Linq.dll
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\bin\Debug\netcoreapp3.1\Remotion.Linq.EagerFetching.dll
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\bin\Debug\netcoreapp3.1\FluentNHibernate.dll
 C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\obj\Debug\netcoreapp3.1\SystemAPI.csproj.CoreCompileInputs.cache
 C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\obj\Debug\netcoreapp3.1\SystemAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\obj\Debug\netcoreapp3.1\SystemAPI.MvcApplicationPartsAssemblyInfo.cache
