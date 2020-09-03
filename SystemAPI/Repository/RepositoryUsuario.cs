@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Threading.Tasks;
 using SystemAPI.Configuracoes.Interfaces;
 using SystemAPI.Modal;
 using SystemAPI.Repository.Conexao;
@@ -24,31 +23,70 @@ namespace SystemAPI.Repository
         }
         public void Alterar(Usuario usuario)
         {
+            string sql = @"update Usuarios set nome=@nome, senha =@senha, email =@email, ativado=@ativado where id =@id";
+            using (var connection = new SqlConnection(this.conn))
+            {
+                connection.Open();
+
+                connection.Query<Usuario>(sql, new 
+                { 
+                    nome = usuario.Nome,
+                    senha = usuario.Senha,
+                    email =usuario.Email,
+                    ativado =usuario.Ativo,
+                    id = usuario.Id
+                });
+
+                connection.Close();
+
+            }
         }
 
         public void Deletar(Usuario usuario)
         {
-
+            string sql = @"delete from Usuarios where id= @id";
+            using (var connection = new SqlConnection(this.conn))
+            {
+                connection.Open();
+                 connection.Query<Usuario>(sql, new { id = usuario.Id});
+                connection.Close();
+            }
         }
 
         public IEnumerable<Usuario> PesquisarTodos()
         {
-            IList<Usuario> listaTeste = new List<Usuario>();
-            listaTeste.Add(new Usuario("0","Guilherme","123456789","jfcdsjfs@sdchsaud", true));
-            listaTeste.Add(new Usuario("1","Guilherme","123456789","jfcdsjfs@sdchsaud", true));
-            listaTeste.Add(new Usuario("2","Guilherme","123456789","jfcdsjfs@sdchsaud", false));
-            listaTeste.Add(new Usuario("3","Guilherme","123456789","jfcdsjfs@sdchsaud", false));
-            return listaTeste;
+            string sql = @"select * from Usuarios";
+
+            using (var connection = new SqlConnection(this.conn))
+            {
+                connection.Open();
+
+                var usuarios = connection.Query<Usuario>(sql);
+
+                connection.Close();
+
+                return usuarios;
+            }
         }
 
         public Usuario PesquisarUser(int id)
         {
-            throw new NotImplementedException();
+            string sql = @"select * from Usuarios where id =@id";
+            using (var connection = new SqlConnection(this.conn))
+            {
+                connection.Open();
+
+                var usuarios = connection.Query<Usuario>(sql, new { id= id});
+
+                connection.Close();
+
+                return usuarios.FirstOrDefault();
+            }
         }
 
         public void Salve(Usuario usuario)
         {
-            string sql = @"Insert Into Usuario(nome, email, senha, ativo) values(@nome,@email,ENCRYPTBYPASSPHRASE(@senha,'1'),@ativo)";
+            string sql = @"Insert Into Usuarios(nome, email, senha, ativado) values(@nome,@email,  @senha,@ativo)";
             using (var connection = new SqlConnection(this.conn))
             {
                 connection.Open();
