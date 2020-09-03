@@ -29,6 +29,28 @@ namespace SystemAPI.Repository
 
         public void Alterar(Cliente cliente)
         {
+            string sqlcliente = @"update Cliente set nome =@nome, email=@email, telefone =@telefone 
+                               where id_cliente = @id_Cliente";
+            string sqlendereco = @"update Endereco set rua= @rua, estado = @estado, CEP = @cep, cidade = @cidade, complemento= @complemento 
+                        where id_endereco = @IdEndereco";
+
+
+            using (var connection = new SqlConnection(this.conn))
+            {
+                connection.Open();
+                connection.Execute(sqlcliente.Trim(), new { nome = cliente.Nome, email = cliente.Email, telefone = cliente.Telefone, id_Cliente = cliente.Id_Cliente });
+                connection.Execute(sqlendereco.Trim(), new
+                {
+                    idEndereco = cliente.endereco.Id_Endereco,
+                    rua = cliente.endereco.Rua,
+                    estado = cliente.endereco.Estado,
+                    cep = cliente.endereco.CEP,
+                    cidade = cliente.endereco.Cidade,
+                    complemento = cliente.endereco.Complemento
+                });
+
+                connection.Close();
+            }
         }
 
         public void Deletar(Cliente cliente)
@@ -40,8 +62,8 @@ namespace SystemAPI.Repository
             using (var connection = new SqlConnection(this.conn))
             {
                 connection.Open();
-                var clientes = connection.Execute(sqlcliente, new { id_Cliente = cliente.Id_Cliente});
-                var enderecos = connection.Execute(sqlendereco, new { idEndereco = cliente.endereco.Id_Endereco });
+                connection.Execute(sqlcliente, new { id_Cliente = cliente.Id_Cliente });
+                connection.Execute(sqlendereco, new { idEndereco = cliente.endereco.Id_Endereco });
 
                 connection.Close();
             }
@@ -80,11 +102,11 @@ namespace SystemAPI.Repository
             {
                 connection.Open();
 
-                var clientes = connection.Query<Cliente, Endereco, Cliente>(sql,(cliente, endereco) =>
-                {
-                    cliente.endereco = endereco;
-                    return cliente;
-                }, new { id_cliente = id},splitOn: "id_endereco, rua"
+                var clientes = connection.Query<Cliente, Endereco, Cliente>(sql, (cliente, endereco) =>
+                 {
+                     cliente.endereco = endereco;
+                     return cliente;
+                 }, new { id_cliente = id }, splitOn: "id_endereco, rua"
                  ).AsQueryable();
                 connection.Close();
 
@@ -100,14 +122,15 @@ namespace SystemAPI.Repository
             {
                 connection.Open();
 
-                var clientes = connection.Query<Cliente, Endereco, Cliente>( sql, (cliente, endereco) => {
+                var clientes = connection.Query<Cliente, Endereco, Cliente>(sql, (cliente, endereco) =>
+                {
                     cliente.endereco = endereco;
                     return cliente;
                 }, splitOn: "id_endereco, rua"
-                 ).AsQueryable() ;
+                 ).AsQueryable();
 
                 connection.Close();
-               
+
                 return clientes;
             }
         }

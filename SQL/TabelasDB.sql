@@ -82,7 +82,16 @@ GO
 
 create view Clientes
 as
-	select Cliente.id_cliente, Cliente.nome, Cliente.Email, Cliente.Telefone, Endereco.Rua, Endereco.CEP, Endereco.cidade, Endereco.estado
+	select Cliente.id_cliente, 
+	Cliente.nome, 
+	Cliente.Email, 
+	Cliente.Telefone, 
+	Endereco.Rua, 
+	Endereco.CEP, 
+	Endereco.cidade, 
+	Endereco.estado, 
+	Endereco.complemento,
+	Endereco.id_endereco
 	from Cliente inner join Endereco
 		on Cliente.id_endereco = Endereco.id_endereco;
 
