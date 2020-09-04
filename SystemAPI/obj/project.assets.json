@@ -7729,19 +7729,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jorge\\.nuget\\packages\\": {}
+    "C:\\Users\\Guilherme\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projetoGIT\\MyAplicationTest\\SystemAPI\\SystemAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\API\\SystemAPI\\SystemAPI.csproj",
       "projectName": "SystemAPI",
-      "projectPath": "D:\\projetoGIT\\MyAplicationTest\\SystemAPI\\SystemAPI.csproj",
-      "packagesPath": "C:\\Users\\Jorge\\.nuget\\packages\\",
-      "outputPath": "D:\\projetoGIT\\MyAplicationTest\\SystemAPI\\obj\\",
+      "projectPath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\API\\SystemAPI\\SystemAPI.csproj",
+      "packagesPath": "C:\\Users\\Guilherme\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\API\\SystemAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Jorge\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Guilherme\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7754,11 +7754,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\projetoGIT\\MyAplicationTest\\ConfiguracaoAplication\\ConfiguracaoAplication.csproj": {
-              "projectPath": "D:\\projetoGIT\\MyAplicationTest\\ConfiguracaoAplication\\ConfiguracaoAplication.csproj"
+            "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\API\\ConfiguracaoAplication\\ConfiguracaoAplication.csproj": {
+              "projectPath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\API\\ConfiguracaoAplication\\ConfiguracaoAplication.csproj"
             },
-            "D:\\projetoGIT\\MyAplicationTest\\MensageiroSys\\MensageiroSys.csproj": {
-              "projectPath": "D:\\projetoGIT\\MyAplicationTest\\MensageiroSys\\MensageiroSys.csproj"
+            "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\API\\MensageiroSys\\MensageiroSys.csproj": {
+              "projectPath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\API\\MensageiroSys\\MensageiroSys.csproj"
             }
           }
         }

@@ -33,7 +33,7 @@ namespace SystemAPI.Repository
                     nome = usuario.Nome,
                     senha = usuario.Senha,
                     email =usuario.Email,
-                    ativado =usuario.Ativo,
+                    ativado =usuario.Ativado,
                     id = usuario.Id
                 });
 
@@ -86,7 +86,7 @@ namespace SystemAPI.Repository
 
         public void Salve(Usuario usuario)
         {
-            string sql = @"Insert Into Usuarios(nome, email, senha, ativado) values(@nome,@email,  @senha,@ativo)";
+            string sql = @"Insert Into Usuarios(nome, email, senha, ativado) values(@nome,@email, @senha,@ativo)";
             using (var connection = new SqlConnection(this.conn))
             {
                 connection.Open();
@@ -94,7 +94,7 @@ namespace SystemAPI.Repository
                     usuario.Nome,
                     usuario.Email,
                     usuario.Senha,
-                    usuario.Ativo
+                    usuario.Ativado
                 });
 
                 connection.Close();

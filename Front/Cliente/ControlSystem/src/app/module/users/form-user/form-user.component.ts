@@ -41,7 +41,7 @@ export class FormUserComponent implements OnInit {
         nome: [this.data.nome, [Validators.required]],
         senha: [this.data.senha, [Validators.required, Validators.minLength(6)]],
         email:[this.data.email,[Validators.required, Validators.email]],
-        ativado:[this.data.ativo,[Validators.required]],
+        ativado:[this.data.ativado,[Validators.required]],
         id: [this.data.Id]
       })
     }
@@ -64,7 +64,7 @@ export class FormUserComponent implements OnInit {
         senha: this.f.senha.value,
         id: "0",
         email: this.f.email.value,
-        ativo: this.f.ativado.value
+        ativado: this.f.ativado.value
       })
       return newUser;
     } else {
@@ -73,7 +73,7 @@ export class FormUserComponent implements OnInit {
         senha: this.f.senha.value,
         id: this.f.id.value,
         email: this.f.email.value,
-        ativo: this.f.ativado.value
+        ativado: this.f.ativado.value
       })
       return editUser;
     }

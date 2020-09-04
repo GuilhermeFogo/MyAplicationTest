@@ -18,18 +18,18 @@ export class MenuComponent implements OnInit {
     this.list_links = [
       {
         titulo: 'Home',
-        route: '/home',
+        route: '/access/home',
         icon: 'home'
       },
       {
         titulo: 'Usuarios',
-        route: 'home/gerenciaUser',
+        route: 'access/gerenciaUser',
         display: false,
         icon: 'account_box'
       },
       {
         titulo: 'Clientes',
-        route: 'home/gerenciaCliente',
+        route: 'access/gerenciaCliente',
         icon: 'accessibility_new',
         display: false
       }

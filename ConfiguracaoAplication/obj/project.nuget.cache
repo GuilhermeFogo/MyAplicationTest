@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "53ap6o+/mdmHdea1S129hQoCdJeVfGs8iFfDsVB30hTI7mO0zkgH8KvdS9hgeaxTmC66SL5nOW//IxfRX5yqeg==",
+  "dgSpecHash": "2v5ROxx24FrjJlXQh8VSir4tA0mdEwBD8Oca/CK4jXlBTlmW2u3luvafpB/yWMX7PPK07+yP5iGdTDivpmaepA==",
   "success": true,
-  "projectFilePath": "D:\\projetoGIT\\MyAplicationTest\\ConfiguracaoAplication\\ConfiguracaoAplication.csproj",
+  "projectFilePath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\API\\ConfiguracaoAplication\\ConfiguracaoAplication.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Jorge\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+    "C:\\Users\\Guilherme\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
   ],
   "logs": []
 }

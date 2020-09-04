@@ -42,7 +42,7 @@ export class FormLoginComponent implements OnInit {
       senha: this.f.pass.value,
       id: "0",
       email: null,
-      ativo:true
+      ativado:true
     });
     const expires = this.cookie.Expires(0,0,2);
     // this.loginservice.loginUser(user).subscribe(x => {
@@ -50,7 +50,7 @@ export class FormLoginComponent implements OnInit {
     //   this.route.navigateByUrl('/home');
     // }, erro => console.error(erro));
     this.cookie.CreateCookie(user.Nome, expires);
-    this.route.navigateByUrl('/home');
+    this.route.navigateByUrl('/access/home');
   }
 
 }

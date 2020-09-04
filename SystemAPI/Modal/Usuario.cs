@@ -11,7 +11,7 @@ namespace SystemAPI.Modal
         public string Nome { get; set; }
         public string Senha { get; set; }
         public string Email { get; set; }
-        public bool Ativo { get; set; }
+        public bool Ativado { get; set; }
 
         public Usuario(string id, string nome, string senha, string email, bool ativo)
         {
@@ -19,7 +19,7 @@ namespace SystemAPI.Modal
             this.Nome = nome;
             this.Senha = senha;
             this.Email = email;
-            this.Ativo = ativo;
+            this.Ativado = ativo;
         }
 
         public Usuario()
