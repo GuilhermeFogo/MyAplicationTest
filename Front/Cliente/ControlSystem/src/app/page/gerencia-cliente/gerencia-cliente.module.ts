@@ -6,6 +6,7 @@ import { GerenciaClienteComponent } from './gerencia-cliente.component';
 import { FormClienteModule } from 'src/app/module/cliente/component/form-cliente/form-cliente.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
     GerenciaClienteRoutingModule,
     FormClienteModule,
     MatButtonModule,
+    MatTableModule,
     MatDialogModule
   ], exports:[GerenciaClienteComponent]
 })

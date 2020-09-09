@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { User } from '../modal/user';
 import { LoginService } from '../service/login.service';
 import { CookieService } from 'src/app/core/cookie/cookie.service';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-form-login',
@@ -15,12 +16,12 @@ export class FormLoginComponent implements OnInit {
   form: FormGroup;
   private fb: FormBuilder;
   private route: Router;
-  private loginservice: LoginService;
+  private authService: AuthService;
   private cookie: CookieService;
-  constructor(fb: FormBuilder, route: Router, loginservice: LoginService, cookie: CookieService) {
+  constructor(fb: FormBuilder, route: Router, loginservice: AuthService, cookie: CookieService) {
     this.fb = fb;
     this.route = route;
-    this.loginservice = loginservice;
+    this.authService = loginservice;
     this.cookie = cookie;
   }
 
@@ -45,12 +46,10 @@ export class FormLoginComponent implements OnInit {
       ativado:true
     });
     const expires = this.cookie.Expires(0,0,2);
-    // this.loginservice.loginUser(user).subscribe(x => {
-    //   this.cookie.CreateCookie(x.Nome, expires);
-    //   this.route.navigateByUrl('/home');
-    // }, erro => console.error(erro));
-    this.cookie.CreateCookie(user.Nome, expires);
-    this.route.navigateByUrl('/access/home');
+    this.authService.loginUser(user).subscribe(code => {
+      this.cookie.CreateCookie(code, expires);
+      this.route.navigateByUrl('/access/home');
+    }, erro => console.error(erro));
   }
 
 }

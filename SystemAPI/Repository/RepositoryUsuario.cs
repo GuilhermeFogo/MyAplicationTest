@@ -86,7 +86,7 @@ namespace SystemAPI.Repository
 
         public void Salve(Usuario usuario)
         {
-            string sql = @"Insert Into Usuarios(nome, email, senha, ativado) values(@nome,@email, @senha,@ativo)";
+            string sql = @"Insert Into Usuarios(nome, email, senha, ativado) values(@nome,@email, @senha,@ativado)";
             using (var connection = new SqlConnection(this.conn))
             {
                 connection.Open();

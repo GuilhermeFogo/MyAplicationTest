@@ -32,8 +32,4 @@ private url: string;
   deleteUser(user: User): Observable<User>{
     return this.http.delete<User>(this.url + user.id);
   }
-
-  loginUser(u:User): Observable<User>{
-    return this.http.post<User>(this.url, u);
-  }
 }

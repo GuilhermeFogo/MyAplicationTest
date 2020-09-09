@@ -61,7 +61,13 @@ export class FormClienteComponent implements OnInit {
         nome: this.f.nome.value,
         id: 0,
         telefones : this.f.telefone.value,
-        emails: this.f.email.value
+        emails: this.f.email.value,
+        cep: "",
+        cidade:"",
+        complemento:"",
+        estado:"",
+        idEndereco:"",
+        rua:""
       })
       return newCliente;
     } else {
@@ -69,7 +75,13 @@ export class FormClienteComponent implements OnInit {
         nome: this.f.nome.value,
         telefones: this.f.telefone.value,
         emails: this.f.email.value,
-        id: this.f.id.value
+        id: this.f.id.value,
+        cep: "",
+        cidade:"",
+        complemento:"",
+        estado:"",
+        idEndereco:"",
+        rua:""
       })
       return editCliente;
     }

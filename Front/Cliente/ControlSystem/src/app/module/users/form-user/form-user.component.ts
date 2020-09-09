@@ -42,7 +42,7 @@ export class FormUserComponent implements OnInit {
         senha: [this.data.senha, [Validators.required, Validators.minLength(6)]],
         email:[this.data.email,[Validators.required, Validators.email]],
         ativado:[this.data.ativado,[Validators.required]],
-        id: [this.data.Id]
+        id: [this.data.id]
       })
     }
   }
