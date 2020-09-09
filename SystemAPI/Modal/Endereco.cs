@@ -23,13 +23,16 @@ namespace SystemAPI.Modal
 
         public string Cidade { get; set; }
 
-        public Endereco( string idendereco, string rua, string cep, string estado, string cidade, string complemento) 
+        public string Bairro { get; set; }
+
+        public Endereco( string idendereco, string rua, string cep, string estado, string cidade, string complemento, string bairro) 
         {
             this.Id_Endereco = idendereco;
             this.Estado = estado;
             this.Rua = rua;
             this.CEP = cep;
             this.Cidade = cidade;
+            this.Bairro = bairro;
             this.Complemento = complemento;
         }
 

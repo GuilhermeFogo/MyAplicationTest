@@ -13,8 +13,8 @@ namespace SystemAPI.Modal
         [Key]
         public string Id_Cliente { get; set; }
         
-        public Cliente(string id_cliente, string idEndereco, string nome, string telefone, string email, string rua, string estado, string cep, string complemento, string cidade) : 
-            base(idEndereco, nome, telefone, email, rua, estado, cep, complemento, cidade)
+        public Cliente(string id_cliente, string idEndereco, string nome, string telefone, string email, string rua, string estado, string cep, string complemento, string cidade, string bairro) : 
+            base(idEndereco, nome, telefone, email, rua, estado, cep, complemento, cidade, bairro)
         {
             this.Id_Cliente = id_cliente;
         }

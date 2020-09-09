@@ -31,7 +31,7 @@ namespace SystemAPI.Repository
         {
             string sqlcliente = @"update Cliente set nome =@nome, email=@email, telefone =@telefone 
                                where id_cliente = @id_Cliente";
-            string sqlendereco = @"update Endereco set rua= @rua, estado = @estado, CEP = @cep, cidade = @cidade, complemento= @complemento 
+            string sqlendereco = @"update Endereco set rua= @rua, bairro=@bairro, estado = @estado, CEP = @cep, cidade = @cidade, complemento= @complemento 
                         where id_endereco = @IdEndereco";
 
 
@@ -43,6 +43,7 @@ namespace SystemAPI.Repository
                 {
                     idEndereco = cliente.endereco.Id_Endereco,
                     rua = cliente.endereco.Rua,
+                    bairro =cliente.endereco.Bairro,
                     estado = cliente.endereco.Estado,
                     cep = cliente.endereco.CEP,
                     cidade = cliente.endereco.Cidade,
@@ -72,7 +73,7 @@ namespace SystemAPI.Repository
         public void Salve(Cliente cliente)
         {
             string sqlcliente = @"INSERT INTO Cliente(id_endereco, nome, email, telefone) values(@IdEndereco, @nome, @email,@telefone)";
-            string sqlendereco = @"INSERT INTO Endereco(rua, CEP, estado, cidade, complemento) values(@rua, @CEP, @estado, @cidade, @complemento)";
+            string sqlendereco = @"INSERT INTO Endereco(rua, CEP, estado, cidade, complemento, bairro) values(@rua, @CEP, @estado, @cidade, @complemento, @bairro)";
             string sqlHelper = @"select current_value from sys.sequences where name ='SEQ_Endereco'";
 
             using (var connection = new SqlConnection(this.conn))
@@ -84,7 +85,8 @@ namespace SystemAPI.Repository
                     cliente.endereco.CEP,
                     cliente.endereco.Estado,
                     cliente.endereco.Cidade,
-                    cliente.endereco.Complemento
+                    cliente.endereco.Complemento,
+                    cliente.endereco.Bairro
                 });
                 var id_end = connection.Query<int>(sqlHelper);
                 var id = id_end.FirstOrDefault();

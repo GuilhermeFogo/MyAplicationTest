@@ -44,6 +44,7 @@ create table Endereco
 	estado NVarchar(20),
 	cidade NVarchar(45),
 	complemento NVarchar(45),
+	bairro Nvarchar(45)
 
 	constraint pk_endereco primary Key(id_endereco)
 );
@@ -89,7 +90,8 @@ as
 	Endereco.Rua, 
 	Endereco.CEP, 
 	Endereco.cidade, 
-	Endereco.estado, 
+	Endereco.estado,
+	Endereco.bairro,
 	Endereco.complemento,
 	Endereco.id_endereco
 	from Cliente inner join Endereco

@@ -11,9 +11,43 @@
     </mat-form-field>
 
     <mat-form-field class="w-75">
-      <mat-label>Email</mat-label>
-      <input matInput formControlName="email" type="email" placeholder="email@exemple.com">
-  </mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" placeholder="email@exemple.com">
+    </mat-form-field>
+
+    <mat-form-field class="w-75">
+        <mat-label>CEP</mat-label>
+        <input matInput formControlName="cep" type="text" placeholder="000000000" 
+        (keyup.enter)="searchCEP()" maxlength="9">
+    </mat-form-field>
+
+    <div class="w-100 separa">
+        <mat-form-field class="w-50">
+            <mat-label>Rua</mat-label>
+            <input matInput formControlName="rua" type="text">
+        </mat-form-field>
+    
+        <mat-form-field class="w-50 ">
+            <mat-label>Bairro</mat-label>
+            <input matInput formControlName="bairro" type="text">
+        </mat-form-field>
+    </div>
+    <div class="w-100 separa">
+        <mat-form-field class="w-50">
+            <mat-label>Cidade</mat-label>
+            <input matInput formControlName="cidade" type="text" placeholder="São Paulo">
+        </mat-form-field>
+    
+        <mat-form-field class="w-50">
+            <mat-label>Estado</mat-label>
+            <input matInput formControlName="estado" type="text" placeholder="São Paulo">
+        </mat-form-field>
+    </div>
+
+    <mat-form-field class="w-75">
+        <mat-label>Complemento</mat-label>
+        <input matInput formControlName="complemento" type="text">
+    </mat-form-field>
 
     <mat-form-field class="invisible" hidden>
         <input matInput type="number" formControlName="id">

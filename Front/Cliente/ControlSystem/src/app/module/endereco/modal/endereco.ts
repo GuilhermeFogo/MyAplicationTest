@@ -5,8 +5,14 @@ export class Endereco {
     readonly complemento;
     readonly cidade;
     readonly estado;
+    readonly bairro;
 
     
+    public get Bairro() : string {
+        return this.bairro;
+    }
+    
+
     public get CEP() : string {
         return this.cep;
     }
@@ -37,14 +43,15 @@ export class Endereco {
     
     
 
-    constructor({ idEndereco, cep, rua, complemento, cidade, estado }:
+    constructor({ idEndereco, cep, rua, complemento, cidade, estado, bairro }:
         { idEndereco: string, cep: string, rua: string, complemento: string, 
-        cidade: string, estado: string }) {
+        cidade: string, estado: string, bairro: string }) {
         this.cep = cep;
         this.cidade = cidade;
         this.complemento = complemento;
         this.estado = estado;
         this.id_Endereco = idEndereco;
         this.rua = rua;
+        this.bairro = bairro;
     }
 }

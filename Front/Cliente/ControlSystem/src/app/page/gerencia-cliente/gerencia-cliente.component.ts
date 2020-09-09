@@ -24,7 +24,7 @@ export class GerenciaClienteComponent implements OnInit {
 
    public OpenDialog(){
      this.dialog.open(FormClienteComponent,{
-       width:'250px',
+       width:'500px',
        data: null
      }).afterClosed().subscribe(x=>{
        console.log(x);

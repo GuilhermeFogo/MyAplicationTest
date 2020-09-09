@@ -6,7 +6,7 @@ export class Cliente {
     private readonly telefones: string;
     private readonly emails: string;
 
-    private readonly enderco: Endereco;
+    private readonly endereco: Endereco;
 
 
     
@@ -31,27 +31,28 @@ export class Cliente {
 
     
     public get Endereco() : Endereco {
-        return this.enderco
+        return this.endereco
     }
     
     
 
     constructor({ id, nome, telefones, emails, 
-        idEndereco, cep, complemento, estado, cidade, rua }: 
+        idEndereco, cep, complemento, estado, cidade, rua, bairro }: 
         { id: number, nome: string, telefones: string, emails: string , 
             idEndereco: string, cep: string, cidade: string, complemento:string, 
-            estado: string, rua: string}) {
+            estado: string, rua: string, bairro: string}) {
             this.emails = emails;
             this.id = id;
             this.nome = nome;
             this.telefones = telefones;
-            this.enderco = new Endereco({
+            this.endereco = new Endereco({
                 idEndereco: idEndereco,
                 cep:  cep,
                 cidade: cidade,
                 complemento: complemento,
                 estado: estado,
-                rua: rua
+                rua: rua,
+                bairro: bairro
             })
     }
 }
