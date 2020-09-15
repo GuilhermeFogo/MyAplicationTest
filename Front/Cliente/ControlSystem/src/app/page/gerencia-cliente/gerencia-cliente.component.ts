@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { FormClienteComponent } from 'src/app/module/cliente/component/form-cliente/form-cliente.component';
 import { Cliente } from 'src/app/module/cliente/modal/cliente';
 import { MatTableDataSource } from '@angular/material/table';
+import { ClienteService } from 'src/app/module/cliente/service/cliente.service';
 
 @Component({
   selector: 'app-gerencia-cliente',
@@ -12,34 +13,49 @@ import { MatTableDataSource } from '@angular/material/table';
 export class GerenciaClienteComponent implements OnInit {
 
   dataSource: MatTableDataSource<Cliente>;
-  displayedColumns: string[] = ['nome', 'email','telefone','rua', 'CEP', 'cidade','estado' , "Edit"];
-  private dialog: MatDialog
-  constructor(dialog: MatDialog) {
+  displayedColumns: string[] = ['nome', 'email', 'telefone', 'rua', 'CEP', 'cidade', 'estado', "Edit"];
+  private dialog: MatDialog;
+  private clienteService: ClienteService;
+  constructor(dialog: MatDialog, clienteService: ClienteService) {
     this.dialog = dialog;
-   }
+    this.clienteService = clienteService;
+  }
   ngOnInit(): void {
-
+    this.getClientes();
   }
 
 
-   public OpenDialog(){
-     this.dialog.open(FormClienteComponent,{
-       width:'500px',
-       data: null
-     }).afterClosed().subscribe(x=>{
-       console.log(x);
-     })
-   }
+  public OpenDialog() {
+    this.dialog.open(FormClienteComponent, {
+      width: '500px',
+      data: null
+    }).afterClosed().subscribe(x => {
+      console.log(x);
+    })
+  }
 
 
-   public EditDialog(cliente: Cliente){
+  public EditDialog(cliente: Cliente) {
 
-   }
+  }
 
-   public deletaCliente(cliente: Cliente){
+  public deletaCliente(cliente: Cliente) {
 
-   }
+  }
+
+  private getClientes(){
+    this.clienteService.VerClientes().subscribe(x=>{
+      this.dataSource = new MatTableDataSource(x); 
+    }, erro => console.error(erro))
+  }
+
+  private PostClientes(cliente: Cliente){
+    this.clienteService.PostCliente(cliente).subscribe(()=>{ 
+      console.log("Enviado com exito");
+    }, erro => console.error(erro))
+  }
 
 
-   
+
+
 }

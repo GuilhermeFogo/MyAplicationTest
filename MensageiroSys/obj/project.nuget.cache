@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "wu0b06hb32pwhnmV9gKCS7Bskx5PKPNvGTLW1tI262Bk14kKvBm5nfRwKvGSGHuGPLZA2T+/XcUws5azoQxg1A==",
+  "dgSpecHash": "aWdf/MvDbfXp4WROyfkEq5HMFRscqN2QpD8H8YJfGCc0vJm9B+ExShpt6v7cc8QgU4fEf0+d710jd9UG5+QjpA==",
   "success": true,
-  "projectFilePath": "D:\\projetoGIT\\MyAplicationTest\\MensageiroSys\\MensageiroSys.csproj",
+  "projectFilePath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\API\\MensageiroSys\\MensageiroSys.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Jorge\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+    "C:\\Users\\Guilherme\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
   ],
   "logs": []
 }

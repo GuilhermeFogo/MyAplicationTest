@@ -52,19 +52,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jorge\\.nuget\\packages\\": {}
+    "C:\\Users\\Guilherme\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projetoGIT\\MyAplicationTest\\ConfiguracaoAplication\\ConfiguracaoAplication.csproj",
+      "projectUniqueName": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\API\\ConfiguracaoAplication\\ConfiguracaoAplication.csproj",
       "projectName": "ConfiguracaoAplication",
-      "projectPath": "D:\\projetoGIT\\MyAplicationTest\\ConfiguracaoAplication\\ConfiguracaoAplication.csproj",
-      "packagesPath": "C:\\Users\\Jorge\\.nuget\\packages\\",
-      "outputPath": "D:\\projetoGIT\\MyAplicationTest\\ConfiguracaoAplication\\obj\\",
+      "projectPath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\API\\ConfiguracaoAplication\\ConfiguracaoAplication.csproj",
+      "packagesPath": "C:\\Users\\Guilherme\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\API\\ConfiguracaoAplication\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Jorge\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Guilherme\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -108,7 +108,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

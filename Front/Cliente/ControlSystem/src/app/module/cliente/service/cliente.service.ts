@@ -12,23 +12,23 @@ export class ClienteService {
   private readonly url: string;
   constructor(http: HttpClient) {
     this.http = http;
-    this.url = environment.Local.apiLocal + "api/Cliente";
-   }
+    this.url = environment.Local.apiLocal + "api/Cliente/";
+  }
 
-   public  VerClientes(): Observable<Cliente[]>{
-     return this.http.get<Cliente[]>(this.url);
-   }
+  public VerClientes(): Observable<Cliente[]> {
+    return this.http.get<Cliente[]>(this.url);
+  }
 
-   public  PostCliente(cliente: Cliente): Observable<Cliente>{
+  public PostCliente(cliente: Cliente): Observable<Cliente> {
     return this.http.post<Cliente>(this.url, cliente);
   }
 
-  public  PutCliente(cliente: Cliente): Observable<Cliente>{
+  public PutCliente(cliente: Cliente): Observable<Cliente> {
     return this.http.put<Cliente>(this.url, cliente.Id);
   }
 
-  public  DeleteCliente(): Observable<Cliente>{
-    return this.http.delete<Cliente>(this.url);
+  public DeleteCliente(cliente:Cliente): Observable<Cliente> {
+    return this.http.delete<Cliente>(this.url+ cliente.Id);
   }
-  
+
 }

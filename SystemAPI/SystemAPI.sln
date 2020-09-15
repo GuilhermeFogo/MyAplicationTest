@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SystemAPI", "SystemAPI.csproj", "{19A3AE43-DC87-4611-9A83-980F04D3A6AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MensageiroSys", "..\MensageiroSys\MensageiroSys.csproj", "{79EE9EC9-22A0-4E1E-A509-6D1C832D2D76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MensageiroSys", "..\MensageiroSys\MensageiroSys.csproj", "{79EE9EC9-22A0-4E1E-A509-6D1C832D2D76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfiguracaoAplication", "..\ConfiguracaoAplication\ConfiguracaoAplication.csproj", "{A32D2373-A4EB-4906-89C1-F55D77DE0CD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfiguracaoAplication", "..\ConfiguracaoAplication\ConfiguracaoAplication.csproj", "{A32D2373-A4EB-4906-89C1-F55D77DE0CD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth", "..\Auth\Auth.csproj", "{46179717-BAF4-474B-AC0C-4BFDB5E2BD5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{A32D2373-A4EB-4906-89C1-F55D77DE0CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A32D2373-A4EB-4906-89C1-F55D77DE0CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A32D2373-A4EB-4906-89C1-F55D77DE0CD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46179717-BAF4-474B-AC0C-4BFDB5E2BD5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46179717-BAF4-474B-AC0C-4BFDB5E2BD5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46179717-BAF4-474B-AC0C-4BFDB5E2BD5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46179717-BAF4-474B-AC0C-4BFDB5E2BD5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

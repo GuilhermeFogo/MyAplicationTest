@@ -29,23 +29,33 @@ namespace SystemAPI.Controllers
 
         // GET api/<ClienteController>/5
         [HttpGet("{id}")]
-        public Cliente Get(int id)
+        public IActionResult Get(int id)
         {
-            return this.clienteService.PesquisaCliente(id);
+            return Ok(this.clienteService.PesquisaCliente(id));
         }
 
         // POST api/<ClienteController>
         [HttpPost]
-        public void Post([FromBody] Cliente cliente)
+        public IActionResult Post([FromBody] Cliente cliente)
         {
-            this.clienteService.Salvar(cliente);
+            if (cliente.Id_Cliente.Equals("0"))
+            {
+                this.clienteService.Salvar(cliente);
+                return Ok();
+            }
+            return BadRequest();
         }
 
         // PUT api/<ClienteController>/5
         [HttpPut()]
-        public void Put([FromBody] Cliente cliente)
+        public IActionResult Put([FromBody] Cliente cliente)
         {
-            this.clienteService.Alterar(cliente);
+            if (cliente.Id_Cliente != null && cliente.endereco.Id_Endereco != null)
+            {
+                this.clienteService.Alterar(cliente);
+                return Ok();
+            }
+            return BadRequest();
         }
 
         // DELETE api/<ClienteController>/5

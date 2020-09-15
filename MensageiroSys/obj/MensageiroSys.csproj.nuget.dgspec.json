@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\projetoGIT\\MyAplicationTest\\MensageiroSys\\MensageiroSys.csproj": {}
+    "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\API\\MensageiroSys\\MensageiroSys.csproj": {}
   },
   "projects": {
-    "D:\\projetoGIT\\MyAplicationTest\\ConfiguracaoAplication\\ConfiguracaoAplication.csproj": {
+    "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\API\\ConfiguracaoAplication\\ConfiguracaoAplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projetoGIT\\MyAplicationTest\\ConfiguracaoAplication\\ConfiguracaoAplication.csproj",
+        "projectUniqueName": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\API\\ConfiguracaoAplication\\ConfiguracaoAplication.csproj",
         "projectName": "ConfiguracaoAplication",
-        "projectPath": "D:\\projetoGIT\\MyAplicationTest\\ConfiguracaoAplication\\ConfiguracaoAplication.csproj",
-        "packagesPath": "C:\\Users\\Jorge\\.nuget\\packages\\",
-        "outputPath": "D:\\projetoGIT\\MyAplicationTest\\ConfiguracaoAplication\\obj\\",
+        "projectPath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\API\\ConfiguracaoAplication\\ConfiguracaoAplication.csproj",
+        "packagesPath": "C:\\Users\\Guilherme\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\API\\ConfiguracaoAplication\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jorge\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Guilherme\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,21 +58,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\projetoGIT\\MyAplicationTest\\MensageiroSys\\MensageiroSys.csproj": {
+    "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\API\\MensageiroSys\\MensageiroSys.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projetoGIT\\MyAplicationTest\\MensageiroSys\\MensageiroSys.csproj",
+        "projectUniqueName": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\API\\MensageiroSys\\MensageiroSys.csproj",
         "projectName": "MensageiroSys",
-        "projectPath": "D:\\projetoGIT\\MyAplicationTest\\MensageiroSys\\MensageiroSys.csproj",
-        "packagesPath": "C:\\Users\\Jorge\\.nuget\\packages\\",
-        "outputPath": "D:\\projetoGIT\\MyAplicationTest\\MensageiroSys\\obj\\",
+        "projectPath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\API\\MensageiroSys\\MensageiroSys.csproj",
+        "packagesPath": "C:\\Users\\Guilherme\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\API\\MensageiroSys\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jorge\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Guilherme\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -85,8 +85,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\projetoGIT\\MyAplicationTest\\ConfiguracaoAplication\\ConfiguracaoAplication.csproj": {
-                "projectPath": "D:\\projetoGIT\\MyAplicationTest\\ConfiguracaoAplication\\ConfiguracaoAplication.csproj"
+              "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\API\\ConfiguracaoAplication\\ConfiguracaoAplication.csproj": {
+                "projectPath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\API\\ConfiguracaoAplication\\ConfiguracaoAplication.csproj"
               }
             }
           }
@@ -120,7 +120,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -76,9 +76,6 @@ C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\bin\Debug\netcoreapp3.1\
 C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\bin\Debug\netcoreapp3.1\Remotion.Linq.dll
 C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\bin\Debug\netcoreapp3.1\Remotion.Linq.EagerFetching.dll
 C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\bin\Debug\netcoreapp3.1\FluentNHibernate.dll
-C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\obj\Debug\netcoreapp3.1\SystemAPI.csproj.CoreCompileInputs.cache
-C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\obj\Debug\netcoreapp3.1\SystemAPI.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\obj\Debug\netcoreapp3.1\SystemAPI.MvcApplicationPartsAssemblyInfo.cache
 D:\projetoGIT\MyAplicationTest\SystemAPI\bin\Debug\netcoreapp3.1\emailsettings.json
 D:\projetoGIT\MyAplicationTest\SystemAPI\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\projetoGIT\MyAplicationTest\SystemAPI\bin\Debug\netcoreapp3.1\appsettings.json
@@ -160,3 +157,7 @@ D:\projetoGIT\MyAplicationTest\SystemAPI\obj\Debug\netcoreapp3.1\staticwebassets
 D:\projetoGIT\MyAplicationTest\SystemAPI\obj\Debug\netcoreapp3.1\SystemAPI.dll
 D:\projetoGIT\MyAplicationTest\SystemAPI\obj\Debug\netcoreapp3.1\SystemAPI.pdb
 D:\projetoGIT\MyAplicationTest\SystemAPI\obj\Debug\netcoreapp3.1\SystemAPI.genruntimeconfig.cache
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\obj\Debug\netcoreapp3.1\SystemAPI.csproj.CoreCompileInputs.cache
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\obj\Debug\netcoreapp3.1\SystemAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\SystemAPI\obj\Debug\netcoreapp3.1\SystemAPI.MvcApplicationPartsAssemblyInfo.cache
