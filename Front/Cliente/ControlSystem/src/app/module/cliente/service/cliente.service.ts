@@ -24,11 +24,11 @@ export class ClienteService {
   }
 
   public PutCliente(cliente: Cliente): Observable<Cliente> {
-    return this.http.put<Cliente>(this.url, cliente.Id);
+    return this.http.put<Cliente>(this.url, cliente);
   }
 
   public DeleteCliente(cliente:Cliente): Observable<Cliente> {
-    return this.http.delete<Cliente>(this.url+ cliente.Id);
+    return this.http.delete<Cliente>(this.url+ cliente.id_Cliente);
   }
 
 }

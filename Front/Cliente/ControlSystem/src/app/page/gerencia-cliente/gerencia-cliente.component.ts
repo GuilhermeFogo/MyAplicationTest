@@ -30,17 +30,34 @@ export class GerenciaClienteComponent implements OnInit {
       width: '500px',
       data: null
     }).afterClosed().subscribe(x => {
-      console.log(x);
+      if(x !=undefined){
+        this.PostClientes(x)
+        this.getClientes();
+      }
+      this.getClientes();
+
     })
   }
 
 
   public EditDialog(cliente: Cliente) {
+    this.dialog.open(FormClienteComponent, {
+      width: '500px',
+      data: cliente
+    }).afterClosed().subscribe(x => {
+      if(x !=undefined){
+        this.PutClientes(x);
+        console.log(x);
+        
+        this.getClientes();
+      }
+      this.getClientes();
 
+    })
   }
 
   public deletaCliente(cliente: Cliente) {
-
+    this.DeleteClientes(cliente);
   }
 
   private getClientes(){
@@ -55,6 +72,17 @@ export class GerenciaClienteComponent implements OnInit {
     }, erro => console.error(erro))
   }
 
+  private PutClientes(cliente: Cliente){
+    this.clienteService.PutCliente(cliente).subscribe(()=>{ 
+      console.log("Alteração salva com exito");
+    }, erro => console.error(erro))
+  }
+
+  private DeleteClientes(cliente: Cliente){
+    this.clienteService.DeleteCliente(cliente).subscribe(()=>{ 
+      console.log("Deletado com exito");
+    }, erro => console.error(erro))
+  }
 
 
 

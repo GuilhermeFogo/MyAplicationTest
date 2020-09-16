@@ -1,12 +1,12 @@
 import { Endereco } from '../../endereco/modal/endereco';
 
 export class Cliente {
-    private readonly nome: string;
-    private readonly id: number;
-    private readonly telefones: string;
-    private readonly emails: string;
+    readonly nome: string;
+    readonly id_Cliente: string;
+    readonly telefone: string;
+    readonly email: string;
 
-    private readonly endereco: Endereco;
+    readonly endereco: Endereco;
 
 
     
@@ -15,18 +15,18 @@ export class Cliente {
     }
 
     
-    public get Id() : number {
-        return this.id;
+    public get Id() : string {
+        return this.id_Cliente;
     }
 
     
     public get Telefones() : string {
-        return this.telefones;
+        return this.telefone;
     }
 
     
     public get Email() : string {
-        return this.emails;
+        return this.email;
     }
 
     
@@ -36,15 +36,15 @@ export class Cliente {
     
     
 
-    constructor({ id, nome, telefones, emails, 
+    constructor({ id_Cliente, nome, telefone, email, 
         idEndereco, cep, complemento, estado, cidade, rua, bairro }: 
-        { id: number, nome: string, telefones: string, emails: string , 
+        { id_Cliente: string, nome: string, telefone: string, email: string , 
             idEndereco: string, cep: string, cidade: string, complemento:string, 
             estado: string, rua: string, bairro: string}) {
-            this.emails = emails;
-            this.id = id;
+            this.email = email;
+            this.id_Cliente = id_Cliente;
             this.nome = nome;
-            this.telefones = telefones;
+            this.telefone = telefone;
             this.endereco = new Endereco({
                 idEndereco: idEndereco,
                 cep:  cep,

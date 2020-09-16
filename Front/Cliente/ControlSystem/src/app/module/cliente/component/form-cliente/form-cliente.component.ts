@@ -47,17 +47,17 @@ export class FormClienteComponent implements OnInit {
     } else {
       this.CreateEdit = "Editando";
       this.form = this.fb.group({
-        nome: [this.data.Nome, [Validators.required]],
-        telefone: [this.data.Telefones, [Validators.required]],
-        id: [this.data.Id],
-        email: [this.data.Email, [Validators.required, Validators.email]],
-        rua: [this.data.Endereco.Rua,[Validators.required]],
-        cep: [this.data.Endereco.CEP, [Validators.required, Validators.maxLength(9)]],
-        cidade: [this.data.Endereco.Cidade, Validators.required],
-        estado:[this.data.Endereco.Estado, Validators.required],
-        bairro:[this.data.Endereco.Bairro, Validators.required],
-        complemento:[this.data.Endereco.Complemento],
-        id_Endereco:[this.data.Endereco.IdEndereco, Validators.required]
+        nome: [this.data.nome, [Validators.required]],
+        telefone: [this.data.telefone, [Validators.required]],
+        id: [this.data.id_Cliente],
+        email: [this.data.email, [Validators.required, Validators.email]],
+        rua: [this.data.endereco.rua,[Validators.required]],
+        cep: [this.data.endereco.cep, [Validators.required, Validators.maxLength(9)]],
+        cidade: [this.data.endereco.cidade, Validators.required],
+        estado:[this.data.endereco.estado, Validators.required],
+        bairro:[this.data.endereco.bairro, Validators.required],
+        complemento:[this.data.endereco.complemento],
+        id_Endereco:[this.data.endereco.id_Endereco, Validators.required]
       })
     }
   }
@@ -82,7 +82,7 @@ export class FormClienteComponent implements OnInit {
         if (!this.data) {
            this.CamposPreenchido("0", x)
         } else {
-          this.CamposPreenchido(this.data.Endereco.IdEndereco, x)
+          this.CamposPreenchido(this.data.endereco.id_Endereco, x)
         }
   
       }, error => { console.log(error) })
@@ -102,9 +102,9 @@ export class FormClienteComponent implements OnInit {
     if (!this.data) {
       const newCliente = new Cliente({
         nome: this.f.nome.value,
-        id: 0,
-        telefones : this.f.telefone.value,
-        emails: this.f.email.value,
+        id_Cliente: "0",
+        telefone : this.f.telefone.value,
+        email: this.f.email.value,
         cep: this.f.cep.value,
         cidade:this.f.cidade.value,
         complemento:this.f.complemento.value,
@@ -117,9 +117,9 @@ export class FormClienteComponent implements OnInit {
     } else {
       const editCliente = new Cliente({
         nome: this.f.nome.value,
-        id: 0,
-        telefones : this.f.telefone.value,
-        emails: this.f.email.value,
+        id_Cliente: this.f.id.value,
+        telefone : this.f.telefone.value,
+        email: this.f.email.value,
         cep: this.f.cep.value,
         cidade:this.f.cidade.value,
         complemento:this.f.complemento.value,

@@ -18,7 +18,7 @@
     <mat-form-field class="w-75">
         <mat-label>CEP</mat-label>
         <input matInput formControlName="cep" type="text" placeholder="000000000" 
-        (keydown.Tab)="searchCEP()" maxlength="9">
+        (keydown.Tab)="searchCEP()" (keyup.enter)="searchCEP()" maxlength="9">
     </mat-form-field>
 
     <div class="w-100 separa">
@@ -51,6 +51,9 @@
 
     <mat-form-field class="invisible" hidden>
         <input matInput type="number" formControlName="id">
+    </mat-form-field>
+    <mat-form-field class="invisible" hidden>
+        <input matInput type="number" formControlName="id_Endereco">
     </mat-form-field>
 
     <button mat-button (click)="Onsubmit()" [disabled]="form.invalid">Salvar</button>

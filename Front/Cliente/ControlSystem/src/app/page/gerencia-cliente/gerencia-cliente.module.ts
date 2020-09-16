@@ -7,6 +7,7 @@ import { FormClienteModule } from 'src/app/module/cliente/component/form-cliente
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -14,10 +15,11 @@ import { MatTableModule } from '@angular/material/table';
   imports: [
     CommonModule,
     GerenciaClienteRoutingModule,
-    FormClienteModule,
     MatButtonModule,
+    MatInputModule,
     MatTableModule,
-    MatDialogModule
+    FormClienteModule,
+    MatDialogModule,
   ], exports:[GerenciaClienteComponent]
 })
 export class GerenciaClienteModule { }
