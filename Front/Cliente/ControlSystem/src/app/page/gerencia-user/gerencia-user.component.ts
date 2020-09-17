@@ -34,8 +34,9 @@ export class GerenciaUserComponent implements OnInit {
     }).afterClosed().subscribe(result => {
       if (result != undefined) {
         this.postUser(result);
+        this.getUser();
       }
-      this.ngOnInit();
+      this.getUser();
     });
   }
 
@@ -46,14 +47,16 @@ export class GerenciaUserComponent implements OnInit {
     }).afterClosed().subscribe(result => {
       if (result != undefined) {
         this.putUser(result);
+        this.getUser();
       }
-      this.ngOnInit();
+      this.getUser();
     });
     
   }
 
   public deletaUser(user: User) {
-    this.deleteUser(user);   
+    this.deleteUser(user); 
+    this.getUser();
   }
 
 

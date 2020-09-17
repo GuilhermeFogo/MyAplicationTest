@@ -8,11 +8,12 @@ import { GerenciaClienteComponent } from './page/gerencia-cliente/gerencia-clien
 import { PageErrorComponent } from './page/page-error/page-error.component';
 import { AccessComponent } from './module/access/access.component';
 import { EnderecoComponent } from './module/endereco/component/endereco.component';
+import { BlockUserGuard } from './core/guard/block-user-guard';
 
 
 const routes: Routes = [
   {
-    path: '', component: LoginComponent
+    path: '', component: LoginComponent, canActivate:[BlockUserGuard]
   },
   {
     path: 'access', component: AccessComponent, canActivate:[RouteGuard], children:[
