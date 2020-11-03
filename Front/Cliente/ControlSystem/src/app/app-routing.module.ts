@@ -7,7 +7,6 @@ import { GerenciaUserComponent } from './page/gerencia-user/gerencia-user.compon
 import { GerenciaClienteComponent } from './page/gerencia-cliente/gerencia-cliente.component';
 import { PageErrorComponent } from './page/page-error/page-error.component';
 import { AccessComponent } from './module/access/access.component';
-import { EnderecoComponent } from './module/endereco/component/endereco.component';
 import { BlockUserGuard } from './core/guard/block-user-guard';
 
 
@@ -21,7 +20,6 @@ const routes: Routes = [
       
       {path: 'gerenciaUser', component: GerenciaUserComponent},
       {path: 'gerenciaCliente', component: GerenciaClienteComponent},
-      {path: 'teste', component: EnderecoComponent},
       {path:'**', component:PageErrorComponent}
     ],
   },
