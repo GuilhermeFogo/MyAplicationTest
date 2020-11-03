@@ -1,0 +1,5 @@
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\Auth\bin\Debug\netcoreapp3.1\Auth.deps.json
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\Auth\bin\Debug\netcoreapp3.1\Auth.dll
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\Auth\obj\Debug\netcoreapp3.1\Auth.csprojAssemblyReference.cache
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\Auth\obj\Debug\netcoreapp3.1\Auth.AssemblyInfoInputs.cache
+C:\Users\Guilherme\Desktop\MeuTreinamento\API\Auth\obj\Debug\netcoreapp3.1\Auth.AssemblyInfo.cs
