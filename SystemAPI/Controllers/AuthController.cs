@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Auth.Modal;
+using Auth.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using SystemAPI.DTO;
 using SystemAPI.Modal;
 using SystemAPI.Service.Interfaces;
 
@@ -21,9 +24,17 @@ namespace SystemAPI.Controllers
             this.usuarioService = usuarioService;
         }
         [HttpPost]
-        public IActionResult Post([FromBody] Usuario usuario)
+        public IActionResult Post([FromBody] UsuarioDTO usuario)
         {
-            return Ok(123);
+            var token = this.usuarioService.Autenticar(usuario);
+            if (string.IsNullOrEmpty(token))
+            {
+                return BadRequest();
+            }
+            else
+            {
+                return Ok(token);
+            }
         }
     }
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../modal/user';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -16,6 +16,11 @@ export class AuthService {
    }
 
   loginUser(u:User): Observable<User>{
-    return this.http.post<User>(this.url, u);
+    const myheader = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+    return this.http.post<User>(this.url, u,{
+      headers: myheader,
+      observe:'body',
+      responseType: 'text' as 'json'
+    });
   }
 }

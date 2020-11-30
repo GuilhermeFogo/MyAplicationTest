@@ -100,5 +100,20 @@ namespace SystemAPI.Repository
                 connection.Close();
             }
         }
+
+        public Usuario LogarUser(string nome, string senha)
+        {
+            string sql = @"select * from Usuarios where nome =@nome and senha=@senha";
+            using (var connection = new SqlConnection(this.conn))
+            {
+                connection.Open();
+
+                var usuarios = connection.Query<Usuario>(sql, new { nome = nome, senha = senha });
+
+                connection.Close();
+
+                return usuarios.FirstOrDefault();
+            }
+        }
     }
 }

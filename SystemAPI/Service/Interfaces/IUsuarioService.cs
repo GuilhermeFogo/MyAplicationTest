@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Auth.Modal;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SystemAPI.DTO;
 using SystemAPI.Modal;
 
 namespace SystemAPI.Service.Interfaces
@@ -13,5 +15,7 @@ namespace SystemAPI.Service.Interfaces
         void Alterar(Usuario usuario);
         Usuario PesquisarUser(int id);
         IEnumerable<Usuario> PesquisarTodos();
+
+        string Autenticar(UsuarioDTO usuario);
     }
 }

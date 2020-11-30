@@ -12,6 +12,7 @@ namespace SystemAPI.Repository.Interfaces
         void Alterar(Usuario usuario);
         void Deletar(Usuario usuario);
         Usuario PesquisarUser(int id);
+        Usuario LogarUser(string nome, string senha);
 
         IEnumerable<Usuario> PesquisarTodos();
     }

@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Auth.Services;
+using Auth.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -86,6 +88,7 @@ namespace SystemAPI
             // basic
             services.AddSingleton<IConfiguracao, Configuracao>();
             services.AddSingleton<IMensageiro, Mensageiro>();
+            services.AddSingleton<IAutchUserService, AutchUserService>();
 
             //sql
             services.AddTransient<IRepositoryCliente, RepositoryCliente>();

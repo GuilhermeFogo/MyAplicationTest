@@ -29,30 +29,48 @@ namespace SystemAPI.Controllers
 
         // GET api/<UsuarioController>/5
         [HttpGet("{id}")]
-        public Usuario Get(int id)
+        public IActionResult Get(int id)
         {
-            return  this.usuarioService.PesquisarUser(id);
+
+            return Ok(this.usuarioService.PesquisarUser(id));
         }
 
         // POST api/<UsuarioController>
         [HttpPost]
-        public void Post([FromBody] Usuario user)
+        public IActionResult Post([FromBody] Usuario user)
         {
-            this.usuarioService.Salve(user);
+            if (string.IsNullOrEmpty(user.Email) || string.IsNullOrEmpty(user.Nome) || string.IsNullOrEmpty(user.Senha))
+            {
+                return BadRequest();
+            }
+            else
+            {
+                this.usuarioService.Salve(user);
+                return Ok();
+            }
         }
 
         // PUT api/<UsuarioController>/5
         [HttpPut()]
-        public void Put([FromBody] Usuario user)
+        public IActionResult Put([FromBody] Usuario user)
         {
-            this.usuarioService.Alterar(user);
+            if (string.IsNullOrEmpty(user.Email)|| string.IsNullOrEmpty(user.Nome)|| string.IsNullOrEmpty(user.Senha))
+            {
+                return BadRequest();
+            }
+            else
+            {
+                this.usuarioService.Alterar(user);
+                return Ok();
+            }
         }
 
         // DELETE api/<UsuarioController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
             this.usuarioService.Deletar(id);
+            return Ok();
         }
     }
 }
