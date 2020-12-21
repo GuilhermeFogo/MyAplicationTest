@@ -22,9 +22,10 @@ namespace SystemAPI.Controllers
 
         // GET: api/<MensagensController>
         [HttpGet]
-        public void Get()
+        public IActionResult Get()
         {
             this.mensageiroService.EnvioDeEmail("", "", "");
+            return Ok();
         }
 
         //// GET api/<MensagensController>/5

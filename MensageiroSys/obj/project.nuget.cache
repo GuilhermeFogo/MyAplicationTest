@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "9FqbHmck9JjoojCQOfeOmWWFb/8YPWrNEjpZSpox8G1OyVd4HbAqXpzwrZOR1mnUGDoKB2K/oIGRfqGsLauotA==",
+  "dgSpecHash": "6pZalRu+MU2wWEoBtujLGnzfMLgbS2yr7pR+a7zcLq6DJxWMUqWCQOcviF7EWRUJ+DZP1PyRixzA5ycp71N8Eg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\API\\MensageiroSys\\MensageiroSys.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Guilherme\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+    "C:\\Users\\Guilherme\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512"
   ],
   "logs": []
 }

@@ -22,9 +22,10 @@ namespace SystemAPI.Service
             this.autchUserService = autchUserService;
         }
 
-        public void Alterar(Usuario usuario)
+        public void Alterar(UsuarioInput usuario)
         {
-            this.repositoryUsuario.Alterar(usuario);
+            var usu = UsuarioInputTOUsuario(usuario);
+            this.repositoryUsuario.Alterar(usu);
         }
 
         public void Deletar(int id)
@@ -33,19 +34,20 @@ namespace SystemAPI.Service
             this.repositoryUsuario.Deletar(usuarios);
         }
 
-        public IEnumerable<Usuario> PesquisarTodos()
+        public IEnumerable<UsuarioInput> PesquisarTodos()
         {
-            return this.repositoryUsuario.PesquisarTodos();
+            return UsuarioCollectionTOUsuarioInputCollection(this.repositoryUsuario.PesquisarTodos());
         }
 
-        public Usuario PesquisarUser(int id)
+        public UsuarioInput PesquisarUser(int id)
         {
-            return this.repositoryUsuario.PesquisarUser(id);
+            return UsuarioTOUsuarioInput(this.repositoryUsuario.PesquisarUser(id));
         }
 
-        public void Salve(Usuario usuario)
+        public void Salve(UsuarioInput usuario)
         {
-            this.repositoryUsuario.Salve(usuario);
+            var usu = UsuarioInputTOUsuario(usuario);
+            this.repositoryUsuario.Salve(usu);
         }
 
 
@@ -63,6 +65,42 @@ namespace SystemAPI.Service
                 return null;
             }
 
+        }
+
+
+        private Usuario UsuarioInputTOUsuario(UsuarioInput usuarioInput)
+        {
+            return new Usuario(
+                id: usuarioInput.id,
+                nome: usuarioInput.Nome,
+                email: usuarioInput.Email,
+                senha: usuarioInput.Senha,
+                ativo: usuarioInput.Ativado
+                );
+        }
+
+
+        private UsuarioInput UsuarioTOUsuarioInput(Usuario usuarioInput)
+        {
+            return new UsuarioInput(
+                id: usuarioInput.Id,
+                nome: usuarioInput.Nome,
+                senha: usuarioInput.Senha,
+                email: usuarioInput.Email,
+                ativo: usuarioInput.Ativado
+                );
+        }
+
+
+        public IEnumerable<UsuarioInput> UsuarioCollectionTOUsuarioInputCollection(IEnumerable<Usuario> usuariosList)
+        {
+            var lista = new List<UsuarioInput>();
+            usuariosList.ToList().ForEach(usu => {
+                var transform = UsuarioTOUsuarioInput(usu);
+                lista.Add(transform);
+            });
+
+            return lista;
         }
 
         private UsuarioAuth UsuarioAuthTOUser(Usuario user)

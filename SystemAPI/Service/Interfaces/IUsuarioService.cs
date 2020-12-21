@@ -10,11 +10,11 @@ namespace SystemAPI.Service.Interfaces
 {
     public interface IUsuarioService
     {
-        void Salve(Usuario usuario);
+        void Salve(UsuarioInput usuario);
         void Deletar(int id);
-        void Alterar(Usuario usuario);
-        Usuario PesquisarUser(int id);
-        IEnumerable<Usuario> PesquisarTodos();
+        void Alterar(UsuarioInput usuario);
+        UsuarioInput PesquisarUser(int id);
+        IEnumerable<UsuarioInput> PesquisarTodos();
 
         string Autenticar(UsuarioDTO usuario);
     }

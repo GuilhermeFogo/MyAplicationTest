@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using SystemAPI.DTO;
 using SystemAPI.Modal;
 using SystemAPI.Service.Interfaces;
 
@@ -22,7 +23,7 @@ namespace SystemAPI.Controllers
         }
         // GET: api/<UsuarioController>
         [HttpGet]
-        public IEnumerable<Usuario> Get()
+        public IEnumerable<UsuarioInput> Get()
         {
             return this.usuarioService.PesquisarTodos();
         }
@@ -37,7 +38,7 @@ namespace SystemAPI.Controllers
 
         // POST api/<UsuarioController>
         [HttpPost]
-        public IActionResult Post([FromBody] Usuario user)
+        public IActionResult Post([FromBody] UsuarioInput user)
         {
             if (string.IsNullOrEmpty(user.Email) || string.IsNullOrEmpty(user.Nome) || string.IsNullOrEmpty(user.Senha))
             {
@@ -52,7 +53,7 @@ namespace SystemAPI.Controllers
 
         // PUT api/<UsuarioController>/5
         [HttpPut()]
-        public IActionResult Put([FromBody] Usuario user)
+        public IActionResult Put([FromBody] UsuarioInput user)
         {
             if (string.IsNullOrEmpty(user.Email)|| string.IsNullOrEmpty(user.Nome)|| string.IsNullOrEmpty(user.Senha))
             {
