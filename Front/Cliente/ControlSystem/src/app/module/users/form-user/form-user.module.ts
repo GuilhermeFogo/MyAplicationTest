@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
+import { SelectRoleModule } from '../select-role/select-role.module';
 
 
 
@@ -17,7 +18,8 @@ import { MatInputModule } from '@angular/material/input';
     MatButtonModule,
     MatInputModule,
     MatCheckboxModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SelectRoleModule
   ], exports:[FormUserComponent],
   entryComponents:[FormUserComponent]
 })

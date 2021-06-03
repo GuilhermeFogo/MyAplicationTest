@@ -23,7 +23,7 @@ namespace SystemAPI.Repository
         }
         public void Alterar(Usuario usuario)
         {
-            string sql = @"update Usuarios set nome=@nome, senha =@senha, email =@email, ativado=@ativado where id =@id";
+            string sql = @"update Usuarios set nome=@nome, senha =@senha, email =@email, ativado=@ativado, roles=@roles where id =@id";
             using (var connection = new SqlConnection(this.conn))
             {
                 connection.Open();
@@ -34,6 +34,7 @@ namespace SystemAPI.Repository
                     senha = usuario.Senha,
                     email =usuario.Email,
                     ativado =usuario.Ativado,
+                    roles = usuario.Roles,
                     id = usuario.Id
                 });
 
@@ -86,7 +87,7 @@ namespace SystemAPI.Repository
 
         public void Salve(Usuario usuario)
         {
-            string sql = @"Insert Into Usuarios(nome, email, senha, ativado) values(@nome,@email, @senha,@ativado)";
+            string sql = @"Insert Into Usuarios(nome, email, senha, ativado, roles) values(@nome,@email, @senha,@ativado, @roles)";
             using (var connection = new SqlConnection(this.conn))
             {
                 connection.Open();
@@ -94,7 +95,8 @@ namespace SystemAPI.Repository
                     usuario.Nome,
                     usuario.Email,
                     usuario.Senha,
-                    usuario.Ativado
+                    usuario.Ativado,
+                    usuario.Roles
                 });
 
                 connection.Close();

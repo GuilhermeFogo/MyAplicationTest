@@ -33,7 +33,8 @@ export class FormUserComponent implements OnInit {
         senha: ['', [Validators.required, Validators.minLength(6)]],
         id: [''],
         email:['',[Validators.required, Validators.email]],
-        ativado:[true,[Validators.required]]
+        ativado:[true,[Validators.required]],
+        role: [1, [Validators.required]]
       })
     } else {
       this.CreateEdit = "Editando";
@@ -42,13 +43,16 @@ export class FormUserComponent implements OnInit {
         senha: [this.data.senha, [Validators.required, Validators.minLength(6)]],
         email:[this.data.email,[Validators.required, Validators.email]],
         ativado:[this.data.ativado,[Validators.required]],
-        id: [this.data.id]
+        id: [this.data.id],
+        role: [this.data.roles, [Validators.required]]
       })
     }
   }
 
 
   public Onsubmit() {
+    console.log(this.MyUser());
+    
     this.dialogRef.close(this.MyUser());
   }
 
@@ -64,8 +68,12 @@ export class FormUserComponent implements OnInit {
         senha: this.f.senha.value,
         id: "0",
         email: this.f.email.value,
-        ativado: this.f.ativado.value
+        ativado: this.f.ativado.value,
+        roles: this.f.role.value,
+        roleString: null
       })
+      console.log(newUser);
+      
       return newUser;
     } else {
       const editUser = new User({
@@ -73,7 +81,9 @@ export class FormUserComponent implements OnInit {
         senha: this.f.senha.value,
         id: this.f.id.value,
         email: this.f.email.value,
-        ativado: this.f.ativado.value
+        ativado: this.f.ativado.value,
+        roles: this.f.role.value,
+        roleString: null
       })
       return editUser;
     }

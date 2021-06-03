@@ -13,13 +13,16 @@ namespace SystemAPI.Modal
         public string Email { get; set; }
         public bool Ativado { get; set; }
 
-        public Usuario(string id, string nome, string senha, string email, bool ativo)
+        public int Roles { get; set; }
+
+        public Usuario(string id, string nome, string senha, string email, bool ativo, int role)
         {
             this.Id = id;
             this.Nome = nome;
             this.Senha = senha;
             this.Email = email;
             this.Ativado = ativo;
+            this.Roles = role;
         }
 
         public Usuario()

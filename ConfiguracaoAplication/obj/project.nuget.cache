@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "7l4/19sPsNAWCoqKo+Yk03atasXaibbfD4o2WNNVRoR6Kj6b1stjJPSgR9aSfKZrihEatwl+t6RxW0EioBtclg==",
+  "dgSpecHash": "0mDoNSA0xvIQX7g/uw/c7TtSp3+sZPYXHUic4UIjwXs1sYhrMgWbYGE26sG23g6rHXSkR8EYCNFZOveA4RDCNA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\API\\ConfiguracaoAplication\\ConfiguracaoAplication.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Guilherme\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
-    "C:\\Users\\Guilherme\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512"
+    "C:\\Users\\Guilherme\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
   ],
   "logs": []
 }

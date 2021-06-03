@@ -43,7 +43,9 @@ export class FormLoginComponent implements OnInit {
       senha: this.f.pass.value,
       id: "0",
       email: null,
-      ativado:true
+      ativado:true,
+      roles: null,
+      roleString: null
     });
     const expires = this.cookie.Expires(0,0,2);
     this.authService.loginUser(user).subscribe(code => {

@@ -15,6 +15,8 @@
         <input matInput formControlName="email" type="email" placeholder="Seu email aqui">
     </mat-form-field>
     <br>
+    <app-select-role [form]="form"></app-select-role>
+    <br>
     <mat-checkbox formControlName="ativado">Ativar Conta</mat-checkbox>
     <br>
     <mat-form-field class="invisible" hidden>

@@ -73,6 +73,7 @@ create table Usuarios
 	senha Nvarchar(100),
 	email Nvarchar(45),
 	ativado bit,
+	roles int,
 
 	constraint pk_User primary Key(id)
 );

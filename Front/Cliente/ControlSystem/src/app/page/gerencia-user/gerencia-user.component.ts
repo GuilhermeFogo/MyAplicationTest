@@ -14,7 +14,7 @@ import { MatTableDataSource } from '@angular/material/table';
 export class GerenciaUserComponent implements OnInit {
 
   dataSource: MatTableDataSource<User>;
-  displayedColumns: string[] = ['nome', 'senha','email','ativo', "Edit"];
+  displayedColumns: string[] = ['nome','role','email','ativo', "Edit"];
   private dialog: MatDialog;
   private loginService: LoginService
   constructor(dialog: MatDialog, loginService: LoginService) {
@@ -62,7 +62,10 @@ export class GerenciaUserComponent implements OnInit {
 
   private getUser() {
     this.loginService.getUser().subscribe(
-      x => { this.dataSource =  new MatTableDataSource(x)},
+      x => {
+        console.log(x);
+        this.dataSource =  new MatTableDataSource(x)
+      },
       error => console.error(error)
     );
   }

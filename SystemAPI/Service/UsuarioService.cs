@@ -25,7 +25,11 @@ namespace SystemAPI.Service
         public void Alterar(UsuarioInput usuario)
         {
             var usu = UsuarioInputTOUsuario(usuario);
-            this.repositoryUsuario.Alterar(usu);
+            bool verdade = ValidacaoUser(usu);
+            if (verdade)
+            {
+                this.repositoryUsuario.Alterar(usu);
+            }
         }
 
         public void Deletar(int id)
@@ -47,7 +51,11 @@ namespace SystemAPI.Service
         public void Salve(UsuarioInput usuario)
         {
             var usu = UsuarioInputTOUsuario(usuario);
-            this.repositoryUsuario.Salve(usu);
+            bool verdade = ValidacaoUser(usu);
+            if (verdade)
+            {
+                this.repositoryUsuario.Salve(usu);
+            }
         }
 
 
@@ -55,15 +63,15 @@ namespace SystemAPI.Service
         {
             var user = this.repositoryUsuario.LogarUser(usuario.Nome, usuario.Senha);
 
-            if (!user.Ativado == false)
+            if (user != null)
             {
-                var userAuthOK = UsuarioAuthTOUser(user);
-                return this.autchUserService.CriarToken(userAuthOK);
+                if (user.Ativado == true)
+                {
+                    var userAuthOK = UsuarioAuthTOUser(user);
+                    return this.autchUserService.CriarToken(userAuthOK);
+                }
             }
-            else
-            {
-                return null;
-            }
+            return "";
 
         }
 
@@ -75,7 +83,8 @@ namespace SystemAPI.Service
                 nome: usuarioInput.Nome,
                 email: usuarioInput.Email,
                 senha: usuarioInput.Senha,
-                ativo: usuarioInput.Ativado
+                ativo: usuarioInput.Ativado,
+                role: usuarioInput.Roles
                 );
         }
 
@@ -87,7 +96,9 @@ namespace SystemAPI.Service
                 nome: usuarioInput.Nome,
                 senha: usuarioInput.Senha,
                 email: usuarioInput.Email,
-                ativo: usuarioInput.Ativado
+                ativo: usuarioInput.Ativado,
+                roles: usuarioInput.Roles,
+                roleString: null
                 );
         }
 
@@ -95,8 +106,11 @@ namespace SystemAPI.Service
         public IEnumerable<UsuarioInput> UsuarioCollectionTOUsuarioInputCollection(IEnumerable<Usuario> usuariosList)
         {
             var lista = new List<UsuarioInput>();
-            usuariosList.ToList().ForEach(usu => {
+            usuariosList.ToList().ForEach(usu =>
+            {
                 var transform = UsuarioTOUsuarioInput(usu);
+                // transform.Senha = "";
+                transform.RoleString = identficadorRole(transform.Roles);
                 lista.Add(transform);
             });
 
@@ -109,6 +123,51 @@ namespace SystemAPI.Service
               nome: user.Nome,
               email: user.Email
             );
+        }
+
+
+        private string identficadorRole(int index)
+        {
+            string role = null;
+            switch (index)
+            {
+                case 1:
+                    role = "Funcionario";
+                    break;
+                case 2:
+                    role = "Cliente";
+                    break;
+                case 3:
+                    role = "Gerente";
+                    break;
+                case 4:
+                    role = "Administrador";
+                    break;
+                default:
+                    role = "";
+                    break;
+            }
+
+            return role;
+        }
+
+
+        private bool ValidacaoUser(Usuario usuario)
+        {
+            var cast = int.Parse(usuario.Id);
+            var u = this.repositoryUsuario.PesquisarUser(cast);
+            if (u == null)
+            {
+                return true;
+            }
+            else
+            {
+                if (u.Roles == 4)
+                {
+                    return true;
+                }
+                return usuario.Roles == u.Roles;
+            }
         }
     }
 }
