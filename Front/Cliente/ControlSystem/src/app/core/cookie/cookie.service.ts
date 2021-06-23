@@ -56,4 +56,9 @@ export class CookieService {
     date.setHours(date.getHours() + hora);
     return date.toUTCString()
   }
+
+
+  public DeleteCookie( nome: string){
+     document.cookie = nome+"=;expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
+  }
 }

@@ -1,3 +1,4 @@
+import { SairModule } from './../sair/sair.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AccessComponent } from './access.component';
@@ -13,7 +14,8 @@ import { MenuModule } from '../menu/menu.module';
     CommonModule,
     MenuModule,
     MatSidenavModule,
-    RouterModule
+    RouterModule,
+    SairModule
   ], exports:[AccessComponent]
 })
 export class AccessModule { }
