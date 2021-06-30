@@ -14,8 +14,8 @@ export class InputLogin extends React.Component<any, Usuarios>{
     render() {
         return (
             <div className="ajuste">
-                <form action="https://www.google.com/" method="get">
-                    <div className="">
+                <form action="" method="post" autoComplete="off">
+                    <div>
                         <div>
                             <input type="text" name="user" about="teste" placeholder="Usuario" className="input"/>
                         </div>
