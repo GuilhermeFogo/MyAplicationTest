@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using SystemAPI.DTO;
 using SystemAPI.Service.Interfaces;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -20,13 +21,13 @@ namespace SystemAPI.Controllers
             this.mensageiroService = mensageiroService;
         }
 
-        // GET: api/<MensagensController>
-        [HttpGet]
-        public IActionResult Get()
-        {
-            this.mensageiroService.EnvioDeEmail("", "", "");
-            return Ok();
-        }
+        //// GET: api/<MensagensController>
+        //[HttpGet]
+        //public IActionResult Get()
+        //{
+        //    this.mensageiroService.EnvioDeEmail("", "", "");
+        //    return Ok();
+        //}
 
         //// GET api/<MensagensController>/5
         //[HttpGet("{id}")]
@@ -37,9 +38,30 @@ namespace SystemAPI.Controllers
 
         //// POST api/<MensagensController>
         //[HttpPost]
-        //public void Post([FromBody] string value)
+        //public IActionResult Post([FromBody] MensageroDTO mensageroDTO)
         //{
+        //    if (mensageroDTO.Para != null || mensageroDTO.idUser != 0 || mensageroDTO.Assunto != null || mensageroDTO.Conteudo != null)
+        //    {
+        //        this.mensageiroService.EnvioDeEmailCadastrado(mensageroDTO);
+        //        return Ok($"Email enviado para {mensageroDTO.Para}");
+        //    }
+        //    return BadRequest();
+
         //}
+
+
+
+        [HttpPost]
+        public IActionResult Envia_email([FromBody] MensageroDTO mensageroDTO)
+        {
+            if (mensageroDTO.Para != null || mensageroDTO.idUser != 0 || mensageroDTO.Assunto != null || mensageroDTO.Conteudo != null)
+            {
+                this.mensageiroService.EnvioDeEmail(mensageroDTO);
+                return Ok($"Email enviado para {mensageroDTO.Para}");
+            }
+            return BadRequest();
+
+        }
 
         //// PUT api/<MensagensController>/5
         //[HttpPut("{id}")]

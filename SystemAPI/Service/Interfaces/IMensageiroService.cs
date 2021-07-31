@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SystemAPI.DTO;
 
 namespace SystemAPI.Service.Interfaces
 {
@@ -9,6 +10,7 @@ namespace SystemAPI.Service.Interfaces
     {
         void EnviarEmailProgramado();
 
-        void EnvioDeEmail(string para, string assunto, string conteudo);
+        void EnvioDeEmailCadastrado(MensageroDTO mensagero);
+        void EnvioDeEmail(MensageroDTO mensagero);
     }
 }

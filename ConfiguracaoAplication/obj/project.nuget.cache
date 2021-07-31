@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "vEE2H3Q1MrPL1ofutWIODam7R57z+o47grHehHwrmBkrRA5GrONFhkmTLxh8T6Wyz69Sqae2YDkuN+5Ir9vZuA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Guilherme\\Desktop\\MeuTreinamento\\API\\ConfiguracaoAplication\\ConfiguracaoAplication.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Guilherme\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
