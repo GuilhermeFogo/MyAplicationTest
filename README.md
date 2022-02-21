@@ -1,5 +1,5 @@
 # Projeto Inicial
-Este projeto é literalmente usudao como teste
+Este projeto é literalmente usado como teste
 
 ## Descritivo:
 Este projeto utiliza Angular com C#, é uma  API usando o Dapper, para apredizado de como fazer um codigo elegante.
